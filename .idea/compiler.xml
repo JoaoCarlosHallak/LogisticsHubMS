@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ConfigService" />
+        <module name="EurekaService" />
+      </profile>
+      <profile name="Annotation profile for ReportService" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="AssignmentLogicService" />
+        <module name="ReportService" />
+        <module name="FleetManagementService" />
+        <module name="CustomerInteractionServer" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AssignmentLogicService" options="-parameters" />
+      <module name="ConfigService" options="-parameters" />
+      <module name="CustomerInteractionServer" options="-parameters" />
+      <module name="EurekaService" options="-parameters" />
+      <module name="FleetManagementService" options="-parameters" />
+      <module name="ReportService" options="-parameters" />
+    </option>
+  </component>
+</project>
