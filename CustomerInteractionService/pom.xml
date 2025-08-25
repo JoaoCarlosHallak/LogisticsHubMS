@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.hallak</groupId>
-	<artifactId>CustomerInteractionServer</artifactId>
+	<artifactId>CustomerInteractionService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CustomerInteractionServer</name>
 	<description>CustomerInteraction to LogisticsHubMS project</description>
