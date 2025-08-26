@@ -5,42 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81eba086-a16e-436b-87a1-b235835b6f2c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/controllers/DriverController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/controllers/VehicleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/dtos/DriverDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/dtos/VehicleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/entities/Availability.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/entities/Driver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/entities/Maintenance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/entities/Specifications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/entities/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/repositories/DriverRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/repositories/VehicleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/services/DriverService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/services/DriverServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/services/VehicleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/services/VehicleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/utils/UtilsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/controllers/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/AddressDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/RouteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/StateDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/RoleType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/security/AuthorizationServerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/security/ResourceServerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/utils/ConfigUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/AssignmentLogicServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/AssignmentLogicServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssignmentLogicService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AssignmentLogicService/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionServer/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionServer/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionServer/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionServer/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionServer/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionServer/src/main/java/com/hallak/CustomerInteractionServer/CustomerInteractionServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/CustomerInteractionServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionServer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionServer/src/test/java/com/hallak/CustomerInteractionServer/CustomerInteractionServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/test/java/com/hallak/CustomerInteractionServer/CustomerInteractionServerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FleetManagementService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/FleetManagementServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/FleetManagementServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReportService/src/main/java/com/hallak/ReportService/ReportServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ReportService/src/main/java/com/hallak/ReportService/ReportServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReportService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ReportService/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +76,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ConfigServiceApplication.executor": "Run",
+    "Application.CustomerInteractionServerApplication.executor": "Run",
     "Application.EurekaServerApplication.executor": "Run",
     "Application.FleetManagementServiceApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -101,21 +86,42 @@
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/User/Downloads/LogisticHubMS/LogisticsHubMS",
     "onboarding.tips.debug.path": "C:/Users/User/Downloads/FleetManagementService/LogisticsHubMS/src/main/java/app/javaBicho/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.hallak.CustomerInteractionServer.dtos" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Downloads\LogisticHubMS\LogisticsHubMS\CustomerInteractionService\src\main\java\com\hallak\CustomerInteractionServer\security\customgrant" />
+      <recent name="C:\Users\User\Downloads\LogisticHubMS\LogisticsHubMS\CustomerInteractionService\src\main\java\com\hallak\CustomerInteractionServer\security" />
       <recent name="C:\Users\User\Downloads\FleetManagementService\LogisticsHubMS" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FleetManagementServiceApplication">
+  <component name="RunManager" selected="Application.CustomerInteractionServerApplication">
     <configuration name="ConfigServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hallak.ConfigService.ConfigServiceApplication" />
       <module name="ConfigService" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.hallak.ConfigService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerInteractionServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hallak.CustomerInteractionServer.CustomerInteractionServerApplication" />
+      <module name="CustomerInteractionService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hallak.CustomerInteractionServer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,9 +157,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FleetManagementServiceApplication" />
-        <item itemvalue="Application.EurekaServerApplication" />
+        <item itemvalue="Application.CustomerInteractionServerApplication" />
         <item itemvalue="Application.ConfigServiceApplication" />
+        <item itemvalue="Application.EurekaServerApplication" />
+        <item itemvalue="Application.FleetManagementServiceApplication" />
       </list>
     </recent_temporary>
   </component>

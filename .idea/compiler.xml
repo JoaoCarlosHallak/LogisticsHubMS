@@ -10,7 +10,7 @@
         <module name="ConfigService" />
         <module name="EurekaService" />
       </profile>
-      <profile name="Annotation profile for FleetManagementService" enabled="true">
+      <profile name="Annotation profile for CustomerInteractionServer" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
