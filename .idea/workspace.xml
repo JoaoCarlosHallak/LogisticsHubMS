@@ -5,26 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81eba086-a16e-436b-87a1-b235835b6f2c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/AddressDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/RouteDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/StateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/RoleType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/repositories/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/security/AuthorizationServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/security/ResourceServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/utils/ConfigUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/controllers/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderListResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/UserResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Route.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Specifications.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/repositories/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FleetManagementService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/AddressDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/RouteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/RouteDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/StateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/UserRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +77,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ConfigServiceApplication.executor": "Run",
-    "Application.CustomerInteractionServerApplication.executor": "Run",
+    "Application.CustomerInteractionServerApplication.executor": "Debug",
     "Application.EurekaServerApplication.executor": "Run",
     "Application.FleetManagementServiceApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -100,6 +101,9 @@
       <recent name="C:\Users\User\Downloads\LogisticHubMS\LogisticsHubMS\CustomerInteractionService\src\main\java\com\hallak\CustomerInteractionServer\security\customgrant" />
       <recent name="C:\Users\User\Downloads\LogisticHubMS\LogisticsHubMS\CustomerInteractionService\src\main\java\com\hallak\CustomerInteractionServer\security" />
       <recent name="C:\Users\User\Downloads\FleetManagementService\LogisticsHubMS" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hallak.CustomerInteractionServer.entities" />
     </key>
   </component>
   <component name="RunManager" selected="Application.CustomerInteractionServerApplication">
@@ -158,8 +162,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.CustomerInteractionServerApplication" />
-        <item itemvalue="Application.ConfigServiceApplication" />
         <item itemvalue="Application.EurekaServerApplication" />
+        <item itemvalue="Application.ConfigServiceApplication" />
         <item itemvalue="Application.FleetManagementServiceApplication" />
       </list>
     </recent_temporary>

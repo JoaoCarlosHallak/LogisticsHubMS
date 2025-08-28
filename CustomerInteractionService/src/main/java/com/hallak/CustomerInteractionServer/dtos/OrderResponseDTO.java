@@ -10,15 +10,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderDTO {
-
+public class OrderResponseDTO {
     private String name;
     private Specifications specification;
     private double weight;
-    private RouteDTO route;
+    private Route route;
     private State state;
-    private UserResponseDTO userResponseDTO;
-
-
 
 }

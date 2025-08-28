@@ -1,7 +1,9 @@
 package com.hallak.CustomerInteractionServer.services;
 
-import com.hallak.CustomerInteractionServer.dtos.UserDTO;
+import com.hallak.CustomerInteractionServer.dtos.UserRequestDTO;
+import com.hallak.CustomerInteractionServer.entities.User;
 
 public interface UserService {
-    UserDTO newUser(UserDTO userDTO);
+    UserRequestDTO newUser(UserRequestDTO userRequestDTO);
+    User authenticated();
 }

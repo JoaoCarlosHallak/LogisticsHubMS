@@ -1,9 +1,9 @@
-package com.hallak.CustomerInteractionServer.dtos;
+package com.hallak.CustomerInteractionServer.entities;
 
 import lombok.Getter;
 
 @Getter
-public enum StateDTO {
+public enum State {
 
     DELIVERED("Delivered successfully"),
     SHIPPED("Shipped and on the way"),
@@ -12,7 +12,7 @@ public enum StateDTO {
 
     private final String description;
 
-    StateDTO(String description) {
+    State(String description) {
         this.description = description;
     }
 

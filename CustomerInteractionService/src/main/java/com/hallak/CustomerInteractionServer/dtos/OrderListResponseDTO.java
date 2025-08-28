@@ -1,7 +1,6 @@
 package com.hallak.CustomerInteractionServer.dtos;
 
-
-import com.hallak.CustomerInteractionServer.entities.Address;
+import com.hallak.CustomerInteractionServer.entities.State;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +8,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RouteDTO {
-    private Address origin;
-    private Address destiny;
+public class OrderListResponseDTO {
+
+    private String name;
+    private State state;
+
+
 }
