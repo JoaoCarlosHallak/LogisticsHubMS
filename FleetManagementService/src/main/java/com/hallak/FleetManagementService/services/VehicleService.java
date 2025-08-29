@@ -10,5 +10,6 @@ public interface VehicleService {
     List<VehicleDTO> findAll();
     String deleteById(Long id);
     VehicleDTO updateVehicle(VehicleDTO vehicleDTO);
+    List<VehicleDTO> findByParams(String availability, String specification, String maintenance);
 }
 

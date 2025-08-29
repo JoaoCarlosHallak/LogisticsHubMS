@@ -8,7 +8,7 @@ import com.hallak.CustomerInteractionServer.entities.Order;
 import com.hallak.CustomerInteractionServer.entities.State;
 import com.hallak.CustomerInteractionServer.entities.User;
 import com.hallak.CustomerInteractionServer.repositories.OrderRepository;
-import org.hibernate.exception.DataException;
+import com.hallak.shared_libraries.entities.DeliveryDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -16,7 +16,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Service
@@ -71,6 +70,14 @@ public class OrderServiceImpl implements OrderService{
                 (orderRepository.findByName(name)
                         .orElseThrow(() -> new UsernameNotFoundException("Order with this name doesn't exists"))
                         , OrderResponseDTO.class);
+
+    }
+
+    @Override
+    public DeliveryDTO dispachOrderById(Long id) {
+        Order order = orderRepository.findById(id).
+                orElseThrow(() -> new UsernameNotFoundException("Order with this id doesn't exists"));
+        return new DeliveryDTO();
 
     }
 }

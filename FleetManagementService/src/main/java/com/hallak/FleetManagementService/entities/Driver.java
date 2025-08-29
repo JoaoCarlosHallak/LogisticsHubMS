@@ -1,10 +1,10 @@
 package com.hallak.FleetManagementService.entities;
 
+import com.hallak.shared_libraries.entities.Specifications;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Data

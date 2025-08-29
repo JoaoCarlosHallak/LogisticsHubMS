@@ -1,4 +1,4 @@
-package com.hallak.FleetManagementService.entities;
+package com.hallak.shared_libraries.entities;
 
 import lombok.Getter;
 

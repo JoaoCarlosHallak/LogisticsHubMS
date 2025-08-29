@@ -5,20 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81eba086-a16e-436b-87a1-b235835b6f2c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/controllers/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/utils/ConfigToPreInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/entities/DeliveryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/entities/DriverDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/entities/OrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/entities/Trip.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/entities/VehicleDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Specifications.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssignmentLogicService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AssignmentLogicService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/RoleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/RoleType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FleetManagementService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/controllers/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/controllers/VehicleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/dtos/DriverDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/dtos/DriverDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/dtos/VehicleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/dtos/VehicleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/entities/Specifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/entities/Specifications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/entities/Availability.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/entities/Availability.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/entities/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/entities/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/entities/Maintenance.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/entities/Maintenance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/entities/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/entities/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/repositories/VehicleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/repositories/VehicleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/services/VehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/services/VehicleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/services/VehicleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/services/VehicleServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +69,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Security Analysis" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -67,29 +80,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ConfigServiceApplication.executor": "Run",
-    "Application.CustomerInteractionServerApplication.executor": "Run",
-    "Application.EurekaServerApplication.executor": "Run",
-    "Application.FleetManagementServiceApplication.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/User/Downloads/LogisticHubMS/LogisticsHubMS",
-    "onboarding.tips.debug.path": "C:/Users/User/Downloads/FleetManagementService/LogisticsHubMS/src/main/java/app/javaBicho/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ConfigServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomerInteractionServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FleetManagementServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jc/LogisticsHubMS/shared-libraries/src/main/java/com/hallak/shared_libraries/entities&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/User/Downloads/FleetManagementService/LogisticsHubMS/src/main/java/app/javaBicho/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.hallak.CustomerInteractionServer.dtos" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jc\LogisticsHubMS\shared-libraries\src\main\java\com\hallak\shared_libraries\entities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jc\LogisticsHubMS" />
@@ -98,11 +114,12 @@
       <recent name="C:\Users\User\Downloads\FleetManagementService\LogisticsHubMS" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hallak.shared_libraries.entities" />
       <recent name="com.hallak.shared_libraries" />
       <recent name="com.hallak.CustomerInteractionServer.entities" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CustomerInteractionServerApplication">
+  <component name="RunManager" selected="Application.FleetManagementServiceApplication">
     <configuration name="ConfigServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hallak.ConfigService.ConfigServiceApplication" />
       <module name="ConfigService" />
@@ -157,10 +174,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CustomerInteractionServerApplication" />
+        <item itemvalue="Application.FleetManagementServiceApplication" />
         <item itemvalue="Application.EurekaServerApplication" />
         <item itemvalue="Application.ConfigServiceApplication" />
-        <item itemvalue="Application.FleetManagementServiceApplication" />
+        <item itemvalue="Application.CustomerInteractionServerApplication" />
       </list>
     </recent_temporary>
   </component>

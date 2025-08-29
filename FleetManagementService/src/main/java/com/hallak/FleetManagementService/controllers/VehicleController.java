@@ -2,6 +2,8 @@ package com.hallak.FleetManagementService.controllers;
 
 import com.hallak.FleetManagementService.dtos.VehicleDTO;
 import com.hallak.FleetManagementService.services.VehicleService;
+import jakarta.persistence.EnumType;
+import org.apache.commons.lang.enums.Enum;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +45,15 @@ public class VehicleController {
     @DeleteMapping(value = "{id}")
     public ResponseEntity<String> deleteById(@PathVariable Long id){
         return new ResponseEntity<>(vehicleService.deleteById(id), HttpStatus.OK);
+    }
+
+    @GetMapping("params")
+    public ResponseEntity<List<VehicleDTO>> findByParams(@RequestParam String availability,
+                                                         @RequestParam String maintenance,
+                                                         @RequestParam String specification){
+        return new ResponseEntity<>(vehicleService.findByParams(availability, specification, maintenance), HttpStatus.OK);
+
+
     }
 
 
