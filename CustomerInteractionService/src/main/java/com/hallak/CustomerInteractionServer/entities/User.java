@@ -8,11 +8,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-
-
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+
 
 @Entity
 @Table(name = "tb_user")

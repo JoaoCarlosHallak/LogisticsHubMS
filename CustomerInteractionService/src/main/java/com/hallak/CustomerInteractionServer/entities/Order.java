@@ -1,6 +1,7 @@
 package com.hallak.CustomerInteractionServer.entities;
 
 
+import com.hallak.shared_libraries.entities.Specifications;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;

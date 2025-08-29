@@ -5,27 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81eba086-a16e-436b-87a1-b235835b6f2c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/controllers/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderListResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/UserResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Route.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Specifications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/repositories/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/AddressDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/RouteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/RouteDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/StateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/UserRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/dtos/OrderResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Specifications.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/dtos/VehicleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/dtos/VehicleDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/entities/Specifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/entities/Specifications.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,20 +70,21 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ConfigServiceApplication.executor": "Run",
-    "Application.CustomerInteractionServerApplication.executor": "Debug",
+    "Application.CustomerInteractionServerApplication.executor": "Run",
     "Application.EurekaServerApplication.executor": "Run",
     "Application.FleetManagementServiceApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/User/Downloads/LogisticHubMS/LogisticsHubMS",
     "onboarding.tips.debug.path": "C:/Users/User/Downloads/FleetManagementService/LogisticsHubMS/src/main/java/app/javaBicho/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propCompiler"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -98,11 +92,13 @@
       <recent name="com.hallak.CustomerInteractionServer.dtos" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jc\LogisticsHubMS" />
       <recent name="C:\Users\User\Downloads\LogisticHubMS\LogisticsHubMS\CustomerInteractionService\src\main\java\com\hallak\CustomerInteractionServer\security\customgrant" />
       <recent name="C:\Users\User\Downloads\LogisticHubMS\LogisticsHubMS\CustomerInteractionService\src\main\java\com\hallak\CustomerInteractionServer\security" />
       <recent name="C:\Users\User\Downloads\FleetManagementService\LogisticsHubMS" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hallak.shared_libraries" />
       <recent name="com.hallak.CustomerInteractionServer.entities" />
     </key>
   </component>
@@ -167,6 +163,13 @@
         <item itemvalue="Application.FleetManagementServiceApplication" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
