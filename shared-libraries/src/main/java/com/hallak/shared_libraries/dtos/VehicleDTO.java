@@ -1,4 +1,4 @@
-package com.hallak.shared_libraries.entities;
+package com.hallak.shared_libraries.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +13,6 @@ public class VehicleDTO {
     private Double capacity;
     private Availability availability;
     private Maintenance maintenance;
-    private Specifications specifications;
+    private Specification specification;
 }
 

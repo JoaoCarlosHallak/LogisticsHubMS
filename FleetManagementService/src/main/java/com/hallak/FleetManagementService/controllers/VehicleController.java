@@ -2,6 +2,7 @@ package com.hallak.FleetManagementService.controllers;
 
 import com.hallak.FleetManagementService.dtos.VehicleDTO;
 import com.hallak.FleetManagementService.services.VehicleService;
+import com.hallak.shared_libraries.dtos.VehicleToSyncCCDTO;
 import jakarta.persistence.EnumType;
 import org.apache.commons.lang.enums.Enum;
 import org.springframework.http.HttpStatus;
@@ -48,10 +49,11 @@ public class VehicleController {
     }
 
     @GetMapping("params")
-    public ResponseEntity<List<VehicleDTO>> findByParams(@RequestParam String availability,
-                                                         @RequestParam String maintenance,
-                                                         @RequestParam String specification){
-        return new ResponseEntity<>(vehicleService.findByParams(availability, specification, maintenance), HttpStatus.OK);
+    public ResponseEntity<List<VehicleToSyncCCDTO>> findByParams(@RequestParam String availability,
+                                                                 @RequestParam String maintenance,
+                                                                 @RequestParam String specification,
+                                                                 @RequestParam Double capacity){
+        return new ResponseEntity<>(vehicleService.findByParams(availability, specification, maintenance, capacity), HttpStatus.OK);
 
 
     }

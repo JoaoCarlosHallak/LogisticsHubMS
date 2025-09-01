@@ -1,7 +1,8 @@
 package com.hallak.FleetManagementService.dtos;
 
 
-import com.hallak.shared_libraries.entities.Specifications;
+import com.hallak.shared_libraries.dtos.Situation;
+import com.hallak.shared_libraries.dtos.Specification;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -12,7 +13,8 @@ public class DriverDTO {
     private String name;
     private String cpf;
     private LocalDate birth_date;
-    private Specifications specifications;
+    private Specification specification;
+    private Situation situation;
 
 
 }

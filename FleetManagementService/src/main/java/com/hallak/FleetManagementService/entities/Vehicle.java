@@ -1,8 +1,8 @@
 package com.hallak.FleetManagementService.entities;
 
-import com.hallak.shared_libraries.entities.Availability;
-import com.hallak.shared_libraries.entities.Maintenance;
-import com.hallak.shared_libraries.entities.Specifications;
+import com.hallak.shared_libraries.dtos.Availability;
+import com.hallak.shared_libraries.dtos.Maintenance;
+import com.hallak.shared_libraries.dtos.Specification;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -31,7 +31,7 @@ public class Vehicle {
     private Maintenance maintenance;
 
     @Enumerated(EnumType.STRING)
-    private Specifications specifications;
+    private Specification specification;
 
 
 

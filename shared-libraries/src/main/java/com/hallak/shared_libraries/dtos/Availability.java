@@ -1,4 +1,4 @@
-package com.hallak.shared_libraries.entities;
+package com.hallak.shared_libraries.dtos;
 
 import lombok.Getter;
 

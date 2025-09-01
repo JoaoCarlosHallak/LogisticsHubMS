@@ -1,10 +1,9 @@
 package com.hallak.CustomerInteractionServer.controllers;
 
-import com.hallak.CustomerInteractionServer.dtos.OrderDTO;
 import com.hallak.CustomerInteractionServer.dtos.OrderListResponseDTO;
 import com.hallak.CustomerInteractionServer.dtos.OrderResponseDTO;
-import com.hallak.CustomerInteractionServer.entities.Order;
 import com.hallak.CustomerInteractionServer.services.OrderService;
+import com.hallak.shared_libraries.dtos.OrderDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,8 @@
 package com.hallak.CustomerInteractionServer.entities;
 
 
-import com.hallak.shared_libraries.entities.Specifications;
+import com.hallak.shared_libraries.dtos.Specification;
+import com.hallak.shared_libraries.dtos.State;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,7 @@ public class Order {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Specifications specification;
+    private Specification specification;
 
     @Column(nullable = false)
     private double weight;

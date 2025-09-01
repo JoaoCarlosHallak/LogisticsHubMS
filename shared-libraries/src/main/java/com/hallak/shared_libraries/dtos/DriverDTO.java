@@ -1,4 +1,4 @@
-package com.hallak.shared_libraries.entities;
+package com.hallak.shared_libraries.dtos;
 
 
 import lombok.AllArgsConstructor;
@@ -14,7 +14,8 @@ public class DriverDTO {
     private String name;
     private String cpf;
     private LocalDate birth_date;
-    private Specifications specifications;
+    private Specification specification;
+    private Situation situation;
 
 
 }

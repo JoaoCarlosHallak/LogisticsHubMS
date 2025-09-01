@@ -1,6 +1,7 @@
 package com.hallak.FleetManagementService.entities;
 
-import com.hallak.shared_libraries.entities.Specifications;
+import com.hallak.shared_libraries.dtos.Situation;
+import com.hallak.shared_libraries.dtos.Specification;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,14 +18,17 @@ public class Driver {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String cpf;
 
     @Column(nullable = false)
     private LocalDate birth_date;
 
-    @Column(nullable = false)
-    private Specifications specifications;
+    @Enumerated(EnumType.STRING)
+    private Specification specification;
+
+    @Enumerated(EnumType.STRING)
+    private Situation situation;
 
 
 

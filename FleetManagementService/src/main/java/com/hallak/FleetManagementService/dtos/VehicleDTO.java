@@ -1,8 +1,8 @@
 package com.hallak.FleetManagementService.dtos;
 
-import com.hallak.shared_libraries.entities.Availability;
-import com.hallak.shared_libraries.entities.Maintenance;
-import com.hallak.shared_libraries.entities.Specifications;
+import com.hallak.shared_libraries.dtos.Availability;
+import com.hallak.shared_libraries.dtos.Maintenance;
+import com.hallak.shared_libraries.dtos.Specification;
 import lombok.Data;
 
 @Data
@@ -13,5 +13,5 @@ public class VehicleDTO {
         private Double capacity;
         private Availability availability;
         private Maintenance maintenance;
-        private Specifications specifications;
+        private Specification specification;
 }

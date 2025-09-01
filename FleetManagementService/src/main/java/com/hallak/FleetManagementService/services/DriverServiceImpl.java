@@ -3,6 +3,10 @@ package com.hallak.FleetManagementService.services;
 import com.hallak.FleetManagementService.dtos.DriverDTO;
 import com.hallak.FleetManagementService.entities.Driver;
 import com.hallak.FleetManagementService.repositories.DriverRepository;
+
+import com.hallak.shared_libraries.dtos.DriverToSyncCCDTO;
+import com.hallak.shared_libraries.dtos.Situation;
+import com.hallak.shared_libraries.dtos.Specification;
 import jakarta.persistence.EntityExistsException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+
+
 
 @Service
 public class DriverServiceImpl implements DriverService {
@@ -36,7 +42,7 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public DriverDTO findById(Long id) {
         return modelMapper.map(driverRepository.findById(id)
-                .orElseThrow(() -> new EntityExistsException("Driver not found")),
+                        .orElseThrow(() -> new EntityExistsException("Driver not found")),
                 DriverDTO.class
         );
     }
@@ -72,4 +78,13 @@ public class DriverServiceImpl implements DriverService {
         );
     }
 
+    @Override
+    public List<DriverToSyncCCDTO> findByParams(String specification, String situation) {
+        return driverRepository.findBySpecificationAndSituation(
+                        Specification.valueOf(specification.toUpperCase()),
+                        Situation.valueOf(situation.toUpperCase()))
+                .stream().map(x -> modelMapper.map(x, DriverToSyncCCDTO.class)).toList();
+
+
+    }
 }

@@ -1,12 +1,9 @@
-package com.hallak.CustomerInteractionServer.dtos;
+package com.hallak.shared_libraries.dtos;
 
-import com.hallak.CustomerInteractionServer.entities.RoleType;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor

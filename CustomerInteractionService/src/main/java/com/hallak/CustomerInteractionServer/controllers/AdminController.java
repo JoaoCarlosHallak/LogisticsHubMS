@@ -2,7 +2,7 @@ package com.hallak.CustomerInteractionServer.controllers;
 
 
 import com.hallak.CustomerInteractionServer.services.OrderService;
-import com.hallak.shared_libraries.entities.DeliveryDTO;
+import com.hallak.shared_libraries.dtos.DeliveryDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

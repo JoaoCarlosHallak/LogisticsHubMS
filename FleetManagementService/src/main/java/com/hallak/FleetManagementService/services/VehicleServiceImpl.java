@@ -3,9 +3,10 @@ package com.hallak.FleetManagementService.services;
 import com.hallak.FleetManagementService.dtos.VehicleDTO;
 import com.hallak.FleetManagementService.entities.Vehicle;
 import com.hallak.FleetManagementService.repositories.VehicleRepository;
-import com.hallak.shared_libraries.entities.Availability;
-import com.hallak.shared_libraries.entities.Maintenance;
-import com.hallak.shared_libraries.entities.Specifications;
+import com.hallak.shared_libraries.dtos.Availability;
+import com.hallak.shared_libraries.dtos.Maintenance;
+import com.hallak.shared_libraries.dtos.Specification;
+import com.hallak.shared_libraries.dtos.VehicleToSyncCCDTO;
 import jakarta.persistence.EntityExistsException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,11 +73,12 @@ public class VehicleServiceImpl implements VehicleService{
     }
 
     @Override
-    public List<VehicleDTO> findByParams(String availability, String specification, String maintenance) {
-        return vehicleRepository.findByMaintenanceAndSpecificationsAndAvailability(Maintenance.valueOf(maintenance.toUpperCase()),
-                        Specifications.valueOf(specification.toUpperCase()),
-                        Availability.valueOf(availability.toUpperCase()))
-                .stream().map(x -> modelMapper.map(x, VehicleDTO.class)).toList();
+    public List<VehicleToSyncCCDTO> findByParams(String availability, String specification, String maintenance, Double capacity) {
+        return vehicleRepository.findByMaintenanceAndSpecificationAndAvailabilityAndCapacityGreaterThanEqual(Maintenance.valueOf(maintenance.toUpperCase()),
+                        Specification.valueOf(specification.toUpperCase()),
+                        Availability.valueOf(availability.toUpperCase()),
+                        capacity)
+                .stream().map(x -> modelMapper.map(x, VehicleToSyncCCDTO.class)).toList();
     }
 
 }

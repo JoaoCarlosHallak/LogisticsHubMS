@@ -1,6 +1,7 @@
 package com.hallak.FleetManagementService.services;
 
 import com.hallak.FleetManagementService.dtos.VehicleDTO;
+import com.hallak.shared_libraries.dtos.VehicleToSyncCCDTO;
 
 import java.util.List;
 
@@ -10,6 +11,6 @@ public interface VehicleService {
     List<VehicleDTO> findAll();
     String deleteById(Long id);
     VehicleDTO updateVehicle(VehicleDTO vehicleDTO);
-    List<VehicleDTO> findByParams(String availability, String specification, String maintenance);
+    List<VehicleToSyncCCDTO> findByParams(String availability, String specification, String maintenance, Double capacity);
 }
 

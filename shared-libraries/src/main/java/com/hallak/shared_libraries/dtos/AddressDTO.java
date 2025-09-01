@@ -1,6 +1,5 @@
-package com.hallak.CustomerInteractionServer.dtos;
+package com.hallak.shared_libraries.dtos;
 
-import com.hallak.shared_libraries.dtos.State;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,10 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderListResponseDTO {
-
+public class AddressDTO {
     private String name;
-    private State state;
-
+    private String cep;
 
 }

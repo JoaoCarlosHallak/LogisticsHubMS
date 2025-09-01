@@ -1,10 +1,10 @@
-package com.hallak.shared_libraries.entities;
+package com.hallak.shared_libraries.dtos;
 
 
 import lombok.Getter;
 
 @Getter
-public enum Specifications {
+public enum Specification {
     FLAMMABLE("Flammable", "Requires fire safety measures"),
     TOXIC("Toxic", "Hazardous to health, requires protective equipment"),
     PERISHABLE("Perishable", "Requires temperature control"),
@@ -19,7 +19,7 @@ public enum Specifications {
     private final String description;
 
 
-    Specifications(String label, String description) {
+    Specification(String label, String description) {
         this.label = label;
         this.description = description;
     }
