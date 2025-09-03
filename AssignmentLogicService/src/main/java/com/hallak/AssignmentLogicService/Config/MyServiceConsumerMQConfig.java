@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class MQConsumerConfig {
+public class MyServiceConsumerMQConfig {
     @Value("${rabbitmq.queue.order}")
     private String orderQueueName;
 

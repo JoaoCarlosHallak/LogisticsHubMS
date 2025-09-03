@@ -12,4 +12,9 @@ import java.time.LocalDateTime;
 public class Trip {
     private LocalDateTime departureDate;
     private LocalDateTime arrivalDate;
+
+    public Trip(LocalDateTime departureDate){
+        this.departureDate = departureDate;
+    }
+
 }
