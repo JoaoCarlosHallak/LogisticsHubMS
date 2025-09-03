@@ -1,30 +1,26 @@
-package com.hallak.AssignmentLogicService.Config;
+package com.hallak.DeliveryRepositoryService.Config;
 
 import org.springframework.amqp.core.*;
-import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
-import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-import org.springframework.amqp.rabbit.core.RabbitAdmin;
-import org.springframework.amqp.rabbit.listener.RabbitListenerContainerFactory;
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class MyServiceConsumerMQConfig {
-    @Value("${rabbitmq.queue.order}")
-    private String orderQueueName;
+
+    @Value("${rabbitmq.queue.delivery}")
+    private String deliveryQueueName;
 
 
 
 
     @Bean
     public Declarables declarables() {
-        Queue order = new Queue(orderQueueName, true, false, false);
+        Queue delivery = new Queue(deliveryQueueName, true, false, false);
         DirectExchange exchange = ExchangeBuilder.directExchange("app.exchange").durable(true).build();
-        Binding bOrder = BindingBuilder.bind(order).to(exchange).with("order.routing");
+        Binding bDelivery = BindingBuilder.bind(delivery).to(exchange).with("delivery.routing");
 
-        return new Declarables(order, exchange, bOrder);
+        return new Declarables(delivery, exchange, bDelivery);
     }
 
 

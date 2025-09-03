@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OrderDTO {
 
+    private Long id;
     private String name;
     private Specification specification;
     private double weight;

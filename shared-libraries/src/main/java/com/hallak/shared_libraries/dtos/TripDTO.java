@@ -9,11 +9,11 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Trip {
+public class TripDTO {
     private LocalDateTime departureDate;
     private LocalDateTime arrivalDate;
 
-    public Trip(LocalDateTime departureDate){
+    public TripDTO(LocalDateTime departureDate){
         this.departureDate = departureDate;
     }
 

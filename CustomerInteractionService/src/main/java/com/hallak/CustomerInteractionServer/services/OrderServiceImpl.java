@@ -9,11 +9,11 @@ import com.hallak.CustomerInteractionServer.entities.Order;
 import com.hallak.shared_libraries.dtos.State;
 import com.hallak.CustomerInteractionServer.entities.User;
 import com.hallak.CustomerInteractionServer.repositories.OrderRepository;
-import com.hallak.shared_libraries.dtos.DeliveryDTO;
+import com.hallak.shared_libraries.dtos.DeliveryToSyncDTO;
 import org.modelmapper.ModelMapper;
+import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -28,19 +28,19 @@ public class OrderServiceImpl implements OrderService {
     private final OrderRepository orderRepository;
     private final UserService userService;
     private final ModelMapper modelMapper;
-    private final String orderQueueName;
+    private final Queue queueToDispatchOrder;
     private final RabbitTemplate rabbitTemplate;
     private final ObjectMapper objectMapper;
 
     @Autowired
-    public OrderServiceImpl(@Value("${rabbitmq.queue.order}") String orderQueueName,
+    public OrderServiceImpl(Queue queueToDispatchOrder,
                             RabbitTemplate rabbitTemplate,
                             ObjectMapper objectMapper,
                             OrderRepository orderRepository,
                             UserService userService,
                             ModelMapper modelMapper) {
         this.objectMapper = objectMapper;
-        this.orderQueueName = orderQueueName;
+        this.queueToDispatchOrder = queueToDispatchOrder;
         this.rabbitTemplate = rabbitTemplate;
         this.orderRepository = orderRepository;
         this.userService = userService;
@@ -88,16 +88,16 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public DeliveryDTO dispachOrderById(Long id) {
+    public DeliveryToSyncDTO dispachOrderById(Long id) {
         Order order = orderRepository.findById(id).
                 orElseThrow(() -> new UsernameNotFoundException("Order with this id doesn't exists"));
-        Object response = rabbitTemplate.convertSendAndReceive(orderQueueName, order);
+        Object response = rabbitTemplate.convertSendAndReceive(queueToDispatchOrder.getName(), modelMapper.map(order, OrderDTO.class));
         if (response instanceof LinkedHashMap<?, ?> map) {
             if (map.containsKey("name")) {
-                return objectMapper.convertValue(map, DeliveryDTO.class);
+                return objectMapper.convertValue(map, DeliveryToSyncDTO.class);
             }
 
         }
-         return new DeliveryDTO();
+         return new DeliveryToSyncDTO();
     }
 }

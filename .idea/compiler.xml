@@ -21,6 +21,7 @@
         <module name="AssignmentLogicService" />
         <module name="FleetManagementService" />
         <module name="ReportService" />
+        <module name="DeliveryRepositoryService" />
         <module name="CustomerInteractionService" />
       </profile>
     </annotationProcessing>
@@ -30,6 +31,7 @@
       <module name="AssignmentLogicService" options="-parameters" />
       <module name="ConfigService" options="-parameters" />
       <module name="CustomerInteractionService" options="-parameters" />
+      <module name="DeliveryRepositoryService" options="-parameters" />
       <module name="EurekaService" options="-parameters" />
       <module name="FleetManagementService" options="-parameters" />
       <module name="ReportService" options="-parameters" />

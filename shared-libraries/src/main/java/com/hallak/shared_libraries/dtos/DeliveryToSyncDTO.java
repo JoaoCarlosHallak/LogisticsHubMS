@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeliveryDTO {
+public class DeliveryToSyncDTO {
 
     private String name;
     private VehicleToSyncCCDTO vehicle;
