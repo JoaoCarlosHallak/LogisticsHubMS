@@ -36,6 +36,11 @@ public class User implements UserDetails {
 
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
+    @CollectionTable(
+            name = "tb_user_roles",
+            joinColumns = @JoinColumn(name = "user_id")
+    )
+    @Column(name = "roles")
     private Set<RoleType> roles;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)

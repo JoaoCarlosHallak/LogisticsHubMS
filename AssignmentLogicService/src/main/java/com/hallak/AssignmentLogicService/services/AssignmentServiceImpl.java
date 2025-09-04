@@ -37,19 +37,23 @@ public class AssignmentServiceImpl implements AssignmentService {
 
 
     @Override
-    @RabbitListener(queues = "{rabbitmq.queue.order}")
+    @RabbitListener(queues = "${rabbitmq.queue.order}")
     public DeliveryToSyncDTO assignmentOrderAndVehicleAndDriver(@Payload OrderDTO orderDTO) {
+        log.info("Received {}", orderDTO);
         Specification specification = orderDTO.getSpecification();
         Double weight = orderDTO.getWeight();
         String originCep = orderDTO.getRoute().getOrigin().getCep();
         String destinyCep = orderDTO.getRoute().getDestiny().getCep();
 
+
         try {
-            List<DriverToSyncCCDTO> drivers = fleetManagementClient.findByParamsDrive(specification.toString(), Situation.AVAILABLE);
+            List<DriverToSyncCCDTO> drivers = fleetManagementClient.findByParamsDrive(specification.toString(), Situation.AVAILABLE.toString());
             List<VehicleToSyncCCDTO> vehicles = fleetManagementClient.findByParamsVehicle(Availability.AVAILABLE.toString(),
                     ((distanceMatrixService.getTravelTimeInHours(originCep, destinyCep) > 15) ? Maintenance.LOW : Maintenance.MEDIUM).toString(),
                     specification.toString(),
                     weight);
+            drivers.forEach(System.out::println);
+            vehicles.forEach(System.out::println);
 
             if (drivers.isEmpty() && vehicles.isEmpty()) {
                 throw new ResourceAccessException("No drivers and vehicles available for assignment");
@@ -59,16 +63,18 @@ public class AssignmentServiceImpl implements AssignmentService {
                 throw new ResourceAccessException("No vehicles available for assignment");
             }
 
-            DriverToSyncCCDTO driver = drivers.getFirst();
-            VehicleToSyncCCDTO vehicle = vehicles.getFirst();
+            DriverToSyncCCDTO driver = drivers.get(0);
+            VehicleToSyncCCDTO vehicle = vehicles.get(0);
 
 
             DeliveryToSyncDTO deliveryToSyncDTO = new DeliveryToSyncDTO(
-                    "Delivery: " + driver.getName() + " " + vehicle.getModel() + " " + orderDTO.getName(),
+                    "Delivery: " + driver.getName() + " | " + vehicle.getModel() + " | " + orderDTO.getName(),
                     vehicle,
                     orderDTO,
                     driver,
                     new TripDTO(LocalDateTime.now()));
+
+            log.info("Sending {}", deliveryToSyncDTO);
 
             rabbitTemplate.convertSendAndReceive(queueToSaveDelivery.getName(), deliveryToSyncDTO);
 
@@ -77,7 +83,8 @@ public class AssignmentServiceImpl implements AssignmentService {
 
 
         } catch (Exception e){
-            throw new RuntimeException("Error : " + e.getMessage());
+            log.error("Erro no assignmentOrderAndVehicleAndDriver", e);
+            throw new RuntimeException("Erro no assignmentOrderAndVehicleAndDriver", e);
         }
 
 

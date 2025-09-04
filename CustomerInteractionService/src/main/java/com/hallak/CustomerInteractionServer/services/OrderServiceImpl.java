@@ -11,6 +11,8 @@ import com.hallak.CustomerInteractionServer.entities.User;
 import com.hallak.CustomerInteractionServer.repositories.OrderRepository;
 import com.hallak.shared_libraries.dtos.DeliveryToSyncDTO;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +33,7 @@ public class OrderServiceImpl implements OrderService {
     private final Queue queueToDispatchOrder;
     private final RabbitTemplate rabbitTemplate;
     private final ObjectMapper objectMapper;
+    private static final Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
 
     @Autowired
     public OrderServiceImpl(Queue queueToDispatchOrder,
@@ -88,10 +91,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public DeliveryToSyncDTO dispachOrderById(Long id) {
+    public DeliveryToSyncDTO dispatchOrderById(Long id) {
         Order order = orderRepository.findById(id).
                 orElseThrow(() -> new UsernameNotFoundException("Order with this id doesn't exists"));
+        log.info("Sending order > name: {} / specification: {} / state: {}", order.getName(), order.getSpecification(), order.getState());
         Object response = rabbitTemplate.convertSendAndReceive(queueToDispatchOrder.getName(), modelMapper.map(order, OrderDTO.class));
+        log.info("Received {}", response);
         if (response instanceof LinkedHashMap<?, ?> map) {
             if (map.containsKey("name")) {
                 return objectMapper.convertValue(map, DeliveryToSyncDTO.class);

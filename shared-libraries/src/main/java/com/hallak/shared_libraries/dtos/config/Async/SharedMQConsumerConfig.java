@@ -9,7 +9,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class SharedConsumerMQConfig {
+public class SharedMQConsumerConfig {
+
+
 
     @Bean
     public RabbitListenerContainerFactory<?> rabbitListenerContainerFactory(

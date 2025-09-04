@@ -6,11 +6,13 @@ import com.hallak.shared_libraries.dtos.State;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Table(name = "orders")
 @Data
 @NoArgsConstructor
+@ToString
 public class Order {
 
     @Id

@@ -10,6 +10,8 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DeliveryRepositoryServiceImpl implements DeliveryRepositoryService{
 
@@ -23,7 +25,7 @@ public class DeliveryRepositoryServiceImpl implements DeliveryRepositoryService{
 
 
     @Override
-    @RabbitListener(queues = "{rabbitmq.queue.delivery}")
+    @RabbitListener(queues = "${rabbitmq.queue.delivery}")
     public void consumeAndPersistDelivery(@Payload DeliveryToSyncDTO deliveryDTO) {
         Delivery delivery = new Delivery(
                 null,
@@ -35,5 +37,10 @@ public class DeliveryRepositoryServiceImpl implements DeliveryRepositoryService{
                         Trip.class));
         deliveryRepository.save(delivery);
 
+    }
+
+    @Override
+    public List<DeliveryDTO> findAll() {
+        return deliveryRepository.findAll().stream().map(x -> modelMapper.map(x, DeliveryDTO.class)).toList();
     }
 }

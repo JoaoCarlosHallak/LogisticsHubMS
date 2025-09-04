@@ -5,36 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81eba086-a16e-436b-87a1-b235835b6f2c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/Config/MyServiceProducerMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/Config/MyServiceConsumerMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/entities/Delivery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/entities/Trip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/repositories/DeliveryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/services/DeliveryRepositoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/services/DeliveryRepositoryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/DeliveryToSyncDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/config/Async/SharedConsumerMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/config/Async/SharedProducerMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/config/utils/ConfigUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/resources/import.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/controllers/DeliveryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FleetManagementService/src/main/resources/import.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/config/Async/SharedMQCommonConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/Config/MQConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/Config/MyServiceConsumerMQConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/SyncConfig/OPF/PollFleetManagementClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/SyncConfig/OPF/FleetManagementClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/services/AssignmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/services/AssignmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/AssignmentLogicServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/AssignmentLogicServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/SyncConfig/OPF/FleetManagementClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/SyncConfig/OPF/FleetManagementClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/services/AssignmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/services/AssignmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/CustomerInteractionServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/CustomerInteractionServerApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/controllers/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/utils/ConfigUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/utils/MQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/utils/MyServiceProducerMQConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/utils/UtilsConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared-libraries/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shared-libraries/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/DeliveryRepositoryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/DeliveryRepositoryServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/services/DeliveryRepositoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/services/DeliveryRepositoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/services/DeliveryRepositoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/services/DeliveryRepositoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/FleetManagementServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/FleetManagementServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/DeliveryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/DeliveryDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/TripDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/config/Async/SharedConsumerMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/config/Async/SharedMQConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/config/Async/SharedProducerMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/config/Async/SharedMQProducerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/config/utils/ConfigUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/config/utils/ConfigUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,10 +83,12 @@
     "Application.AssignmentLogicServiceApplication.executor": "Run",
     "Application.ConfigServiceApplication.executor": "Run",
     "Application.CustomerInteractionServerApplication.executor": "Run",
+    "Application.DeliveryRepositoryServiceApplication.executor": "Run",
     "Application.EurekaServerApplication.executor": "Run",
-    "Application.FleetManagementServiceApplication.executor": "Debug",
+    "Application.FleetManagementServiceApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -130,7 +124,7 @@
       <recent name="com.hallak.CustomerInteractionServer.entities" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FleetManagementServiceApplication">
+  <component name="RunManager" selected="Application.CustomerInteractionServerApplication">
     <configuration name="AssignmentLogicServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hallak.AssignmentLogicService.AssignmentLogicServiceApplication" />
       <module name="AssignmentLogicService" />
@@ -144,12 +138,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hallak.ConfigService.ConfigServiceApplication" />
-      <module name="ConfigService" />
+    <configuration name="CustomerInteractionServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hallak.CustomerInteractionServer.CustomerInteractionServerApplication" />
+      <module name="CustomerInteractionService" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hallak.ConfigService.*" />
+          <option name="PATTERN" value="com.hallak.CustomerInteractionServer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -157,12 +151,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerInteractionServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hallak.CustomerInteractionServer.CustomerInteractionServerApplication" />
-      <module name="CustomerInteractionService" />
+    <configuration name="DeliveryRepositoryServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hallak.DeliveryRepositoryService.DeliveryRepositoryServiceApplication" />
+      <module name="DeliveryRepositoryService" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hallak.CustomerInteractionServer.*" />
+          <option name="PATTERN" value="com.hallak.DeliveryRepositoryService.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -198,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FleetManagementServiceApplication" />
-        <item itemvalue="Application.AssignmentLogicServiceApplication" />
-        <item itemvalue="Application.EurekaServerApplication" />
-        <item itemvalue="Application.ConfigServiceApplication" />
         <item itemvalue="Application.CustomerInteractionServerApplication" />
+        <item itemvalue="Application.AssignmentLogicServiceApplication" />
+        <item itemvalue="Application.DeliveryRepositoryServiceApplication" />
+        <item itemvalue="Application.FleetManagementServiceApplication" />
+        <item itemvalue="Application.EurekaServerApplication" />
       </list>
     </recent_temporary>
   </component>

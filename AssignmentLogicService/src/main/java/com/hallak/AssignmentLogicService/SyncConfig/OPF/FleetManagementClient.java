@@ -19,10 +19,10 @@ public interface FleetManagementClient {
             @RequestParam("specification") String specification,
             @RequestParam("capacity") Double capacity);
 
-    @GetMapping("/drive/params")
+    @GetMapping("/driver/params")
     List<DriverToSyncCCDTO> findByParamsDrive(
             @RequestParam("specification") String specification,
-            @RequestParam("situation") Situation situation);
+            @RequestParam("situation") String situation);
 
 
 

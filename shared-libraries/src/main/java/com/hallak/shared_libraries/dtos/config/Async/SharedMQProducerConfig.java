@@ -7,18 +7,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class SharedProducerMQConfig {
-
-
-    public Jackson2JsonMessageConverter messageConverter() {
-        return new Jackson2JsonMessageConverter();
-    }
+public class SharedMQProducerConfig {
 
 
     @Bean
-    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory){
+    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory, Jackson2JsonMessageConverter converter){
         RabbitTemplate template = new RabbitTemplate(connectionFactory);
-        template.setMessageConverter(messageConverter());
+        template.setMessageConverter(converter);
         return template;
     }
 

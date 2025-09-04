@@ -11,5 +11,5 @@ public interface OrderService {
     OrderDTO newOrder(OrderDTO orderDTO);
     List<OrderListResponseDTO> findMyOrders();
     OrderResponseDTO findMyOrder(String name);
-    DeliveryToSyncDTO dispachOrderById(Long id);
+    DeliveryToSyncDTO dispatchOrderById(Long id);
 }
