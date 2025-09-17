@@ -3,10 +3,9 @@ package com.hallak.FleetManagementService.controllers;
 
 
 import com.hallak.FleetManagementService.dtos.DriverDTO;
-import com.hallak.FleetManagementService.dtos.VehicleDTO;
 import com.hallak.FleetManagementService.services.DriverService;
-import com.hallak.FleetManagementService.services.VehicleService;
 import com.hallak.shared_libraries.dtos.DriverToSyncCCDTO;
+import com.hallak.shared_libraries.dtos.Situation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -53,9 +52,16 @@ public class DriverController {
     public ResponseEntity<List<DriverToSyncCCDTO>> findByParams(@RequestParam String specification,
                                                                 @RequestParam String situation) {
         return new ResponseEntity<>(driverService.findByParams(specification, situation), HttpStatus.OK);
-
-
     }
+
+
+    @PatchMapping(value = "{id}/situation")
+    public ResponseEntity<Void> changeSituation(@PathVariable Long driverId, @RequestParam String situation){
+        return new ResponseEntity<>(driverService.changeSituation(driverId, situation), HttpStatus.OK);
+    }
+
+
+
 }
 
 

@@ -38,7 +38,7 @@ public class AssignmentServiceImpl implements AssignmentService {
 
     @Override
     @RabbitListener(queues = "${rabbitmq.queue.order}")
-    public DeliveryToSyncDTO assignmentOrderAndVehicleAndDriver(@Payload OrderDTO orderDTO) {
+    public DeliveryToASyncDTO assignmentOrderAndVehicleAndDriver(@Payload OrderDTO orderDTO) {
         log.info("Received {}", orderDTO);
         Specification specification = orderDTO.getSpecification();
         Double weight = orderDTO.getWeight();
@@ -63,22 +63,25 @@ public class AssignmentServiceImpl implements AssignmentService {
                 throw new ResourceAccessException("No vehicles available for assignment");
             }
 
+
             DriverToSyncCCDTO driver = drivers.get(0);
             VehicleToSyncCCDTO vehicle = vehicles.get(0);
 
 
-            DeliveryToSyncDTO deliveryToSyncDTO = new DeliveryToSyncDTO(
+            DeliveryToASyncDTO deliveryToASyncDTO = new DeliveryToASyncDTO(
                     "Delivery: " + driver.getName() + " | " + vehicle.getModel() + " | " + orderDTO.getName(),
                     vehicle,
                     orderDTO,
                     driver,
                     new TripDTO(LocalDateTime.now()));
 
-            log.info("Sending {}", deliveryToSyncDTO);
+            log.info("Sending {}", deliveryToASyncDTO);
 
-            rabbitTemplate.convertSendAndReceive(queueToSaveDelivery.getName(), deliveryToSyncDTO);
+            rabbitTemplate.convertSendAndReceive(queueToSaveDelivery.getName(), deliveryToASyncDTO);
 
-            return deliveryToSyncDTO;
+            log.info("Received {}", deliveryToASyncDTO);
+
+            return deliveryToASyncDTO;
 
 
 

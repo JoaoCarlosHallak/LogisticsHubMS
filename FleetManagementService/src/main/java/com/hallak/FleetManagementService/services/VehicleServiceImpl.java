@@ -81,4 +81,23 @@ public class VehicleServiceImpl implements VehicleService{
                 .stream().map(x -> modelMapper.map(x, VehicleToSyncCCDTO.class)).toList();
     }
 
+
+    @Override
+    public Void changeMaintenance(Long vehicleId, String maintenance) {
+        Vehicle vehicle = vehicleRepository.findById(vehicleId)
+                .orElseThrow(() -> new EntityExistsException("This vehicle doesn't exist"));
+        vehicle.setMaintenance(Maintenance.valueOf(maintenance.toUpperCase()));
+        vehicleRepository.save(vehicle);
+        return null;
+    }
+
+    @Override
+    public Void changeAvailability(Long vehicleId, String availability) {
+        Vehicle vehicle = vehicleRepository.findById(vehicleId)
+                .orElseThrow(() -> new EntityExistsException("This vehicle doesn't exist"));
+        vehicle.setAvailability(Availability.valueOf(availability.toUpperCase()));
+        vehicleRepository.save(vehicle);
+        return null;
+    }
+
 }

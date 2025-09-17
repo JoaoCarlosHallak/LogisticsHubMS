@@ -2,7 +2,7 @@ package com.hallak.CustomerInteractionServer.controllers;
 
 
 import com.hallak.CustomerInteractionServer.services.OrderService;
-import com.hallak.shared_libraries.dtos.DeliveryToSyncDTO;
+import com.hallak.shared_libraries.dtos.DeliveryToASyncDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +21,7 @@ public class AdminController {
 
 
     @PostMapping(value = "dispatch/{id}")
-    public ResponseEntity<DeliveryToSyncDTO> dispatchOrderById(@PathVariable Long id){
+    public ResponseEntity<DeliveryToASyncDTO> dispatchOrderById(@PathVariable Long id){
         return new ResponseEntity<>(orderService.dispatchOrderById(id), HttpStatus.OK);
 
 

@@ -2,6 +2,7 @@ package com.hallak.FleetManagementService.services;
 
 import com.hallak.FleetManagementService.dtos.DriverDTO;
 import com.hallak.FleetManagementService.entities.Driver;
+import com.hallak.FleetManagementService.entities.Vehicle;
 import com.hallak.FleetManagementService.repositories.DriverRepository;
 
 import com.hallak.shared_libraries.dtos.DriverToSyncCCDTO;
@@ -87,4 +88,19 @@ public class DriverServiceImpl implements DriverService {
 
 
     }
+
+    @Override
+    public Void changeSituation(Long driverId, String situation) {
+        Driver driver = driverRepository.findById(driverId).orElseThrow(() -> new EntityExistsException("This driver doesn't exists"));
+        driver.setSituation(Situation.valueOf(situation.toUpperCase()));
+        driverRepository.save(driver);
+        return null;
+    }
+
+
+
+
+
+
+
 }

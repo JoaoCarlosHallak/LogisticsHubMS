@@ -3,13 +3,11 @@ package com.hallak.CustomerInteractionServer.services;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hallak.CustomerInteractionServer.dtos.OrderListResponseDTO;
 import com.hallak.CustomerInteractionServer.dtos.OrderResponseDTO;
-import com.hallak.shared_libraries.dtos.OrderDTO;
-import com.hallak.shared_libraries.dtos.UserResponseDTO;
+import com.hallak.CustomerInteractionServer.repositories.UserRepository;
+import com.hallak.shared_libraries.dtos.*;
 import com.hallak.CustomerInteractionServer.entities.Order;
-import com.hallak.shared_libraries.dtos.State;
 import com.hallak.CustomerInteractionServer.entities.User;
 import com.hallak.CustomerInteractionServer.repositories.OrderRepository;
-import com.hallak.shared_libraries.dtos.DeliveryToSyncDTO;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +18,6 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 
 
@@ -28,6 +25,7 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
+    private final UserRepository userRepository;
     private final UserService userService;
     private final ModelMapper modelMapper;
     private final Queue queueToDispatchOrder;
@@ -39,13 +37,14 @@ public class OrderServiceImpl implements OrderService {
     public OrderServiceImpl(Queue queueToDispatchOrder,
                             RabbitTemplate rabbitTemplate,
                             ObjectMapper objectMapper,
-                            OrderRepository orderRepository,
+                            OrderRepository orderRepository, UserRepository userRepository,
                             UserService userService,
                             ModelMapper modelMapper) {
         this.objectMapper = objectMapper;
         this.queueToDispatchOrder = queueToDispatchOrder;
         this.rabbitTemplate = rabbitTemplate;
         this.orderRepository = orderRepository;
+        this.userRepository = userRepository;
         this.userService = userService;
         this.modelMapper = modelMapper;
     }
@@ -91,18 +90,20 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public DeliveryToSyncDTO dispatchOrderById(Long id) {
+    public DeliveryToASyncDTO dispatchOrderById(Long id) {
         Order order = orderRepository.findById(id).
                 orElseThrow(() -> new UsernameNotFoundException("Order with this id doesn't exists"));
         log.info("Sending order > name: {} / specification: {} / state: {}", order.getName(), order.getSpecification(), order.getState());
         Object response = rabbitTemplate.convertSendAndReceive(queueToDispatchOrder.getName(), modelMapper.map(order, OrderDTO.class));
         log.info("Received {}", response);
-        if (response instanceof LinkedHashMap<?, ?> map) {
-            if (map.containsKey("name")) {
-                return objectMapper.convertValue(map, DeliveryToSyncDTO.class);
+        if (response instanceof DeliveryToASyncDTO delivery) {
+            delivery.getOrderDTO().setUserResponseDTO(modelMapper.map(orderRepository.findUserByOrderId(delivery.getOrderDTO().getId()), UserResponseDTO.class));
+            return delivery;
             }
+        return new DeliveryToASyncDTO();
 
-        }
-         return new DeliveryToSyncDTO();
     }
 }
+
+
+
