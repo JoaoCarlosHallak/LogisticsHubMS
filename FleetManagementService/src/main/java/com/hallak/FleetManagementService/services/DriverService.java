@@ -14,5 +14,6 @@ public interface DriverService {
     String deleteById(Long id);
     DriverDTO updateDriver(DriverDTO driverDTO);
     List<DriverToSyncCCDTO> findByParams(String situation, String specification);
-    Void changeSituation(Long driverId, String situation);
+    Void changeSituation(String cpf, String situation);
+    DriverToSyncCCDTO findByCpf(String cpf);
 }

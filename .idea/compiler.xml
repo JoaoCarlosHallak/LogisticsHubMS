@@ -11,7 +11,7 @@
         <module name="EurekaService" />
         <module name="shared-libraries" />
       </profile>
-      <profile name="Annotation profile for FleetManagementService" enabled="true">
+      <profile name="Annotation profile for ReportService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -19,8 +19,8 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="AssignmentLogicService" />
-        <module name="FleetManagementService" />
         <module name="ReportService" />
+        <module name="FleetManagementService" />
         <module name="DeliveryRepositoryService" />
         <module name="CustomerInteractionService" />
       </profile>

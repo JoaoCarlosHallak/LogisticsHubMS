@@ -2,17 +2,12 @@ package com.hallak.DeliveryRepositoryService.services;
 
 
 import com.hallak.shared_libraries.dtos.DeliveryDTO;
-import com.hallak.shared_libraries.dtos.DeliveryToASyncDTO;
+import com.hallak.shared_libraries.dtos.DeliveryToCommunicationDTO;
 
 import java.util.List;
 
 public interface DeliveryRepositoryService {
-    DeliveryToASyncDTO consumeAndPersistDelivery(DeliveryToASyncDTO deliveryToASyncDTO);
+    DeliveryToCommunicationDTO consumeAndPersistDelivery(DeliveryToCommunicationDTO deliveryToCommunicationDTO);
     List<DeliveryDTO> findAll();
-
-
-
-
-
-
+    byte[] deliveryOrder(Long deliveryId);
 }

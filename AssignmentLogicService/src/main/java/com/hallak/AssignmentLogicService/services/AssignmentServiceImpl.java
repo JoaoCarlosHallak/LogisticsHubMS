@@ -38,7 +38,7 @@ public class AssignmentServiceImpl implements AssignmentService {
 
     @Override
     @RabbitListener(queues = "${rabbitmq.queue.order}")
-    public DeliveryToASyncDTO assignmentOrderAndVehicleAndDriver(@Payload OrderDTO orderDTO) {
+    public DeliveryToCommunicationDTO assignmentOrderAndVehicleAndDriver(@Payload OrderDTO orderDTO) {
         log.info("Received {}", orderDTO);
         Specification specification = orderDTO.getSpecification();
         Double weight = orderDTO.getWeight();
@@ -67,21 +67,25 @@ public class AssignmentServiceImpl implements AssignmentService {
             DriverToSyncCCDTO driver = drivers.get(0);
             VehicleToSyncCCDTO vehicle = vehicles.get(0);
 
+            fleetManagementClient.changeSituation(driver.getCpf(), Situation.ON_ROUTE.toString());
+            fleetManagementClient.changeAvailability(vehicle.getPlate(), Availability.RUNNING.toString());
 
-            DeliveryToASyncDTO deliveryToASyncDTO = new DeliveryToASyncDTO(
+
+
+            DeliveryToCommunicationDTO deliveryToCommunicationDTO = new DeliveryToCommunicationDTO(
                     "Delivery: " + driver.getName() + " | " + vehicle.getModel() + " | " + orderDTO.getName(),
                     vehicle,
                     orderDTO,
                     driver,
                     new TripDTO(LocalDateTime.now()));
 
-            log.info("Sending {}", deliveryToASyncDTO);
+            log.info("Sending {}", deliveryToCommunicationDTO);
 
-            rabbitTemplate.convertSendAndReceive(queueToSaveDelivery.getName(), deliveryToASyncDTO);
+            rabbitTemplate.convertSendAndReceive(queueToSaveDelivery.getName(), deliveryToCommunicationDTO);
 
-            log.info("Received {}", deliveryToASyncDTO);
+            log.info("Received {}", deliveryToCommunicationDTO);
 
-            return deliveryToASyncDTO;
+            return deliveryToCommunicationDTO;
 
 
 

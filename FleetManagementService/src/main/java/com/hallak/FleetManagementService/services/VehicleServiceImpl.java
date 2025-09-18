@@ -83,21 +83,28 @@ public class VehicleServiceImpl implements VehicleService{
 
 
     @Override
-    public Void changeMaintenance(Long vehicleId, String maintenance) {
-        Vehicle vehicle = vehicleRepository.findById(vehicleId)
+    public Void changeMaintenance(String plate, String maintenance) {
+        Vehicle vehicle = vehicleRepository.findByPlate(plate)
                 .orElseThrow(() -> new EntityExistsException("This vehicle doesn't exist"));
         vehicle.setMaintenance(Maintenance.valueOf(maintenance.toUpperCase()));
         vehicleRepository.save(vehicle);
         return null;
+
     }
 
     @Override
-    public Void changeAvailability(Long vehicleId, String availability) {
-        Vehicle vehicle = vehicleRepository.findById(vehicleId)
+    public Void changeAvailability(String plate, String availability) {
+        Vehicle vehicle = vehicleRepository.findByPlate(plate)
                 .orElseThrow(() -> new EntityExistsException("This vehicle doesn't exist"));
         vehicle.setAvailability(Availability.valueOf(availability.toUpperCase()));
         vehicleRepository.save(vehicle);
         return null;
     }
+
+    @Override
+    public VehicleToSyncCCDTO findByPlate(String plate) {
+        return modelMapper.map(vehicleRepository.findByPlate(plate), VehicleToSyncCCDTO.class);
+    }
+
 
 }

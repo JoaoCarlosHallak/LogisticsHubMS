@@ -14,7 +14,8 @@ public interface VehicleService {
     String deleteById(Long id);
     VehicleDTO updateVehicle(VehicleDTO vehicleDTO);
     List<VehicleToSyncCCDTO> findByParams(String availability, String specification, String maintenance, Double capacity);
-    Void changeMaintenance(Long vehicleId, String maintenance);
-    Void changeAvailability(Long vehicleId, String availability);
+    Void changeMaintenance(String plate, String maintenance);
+    Void changeAvailability(String plate, String availability);
+    VehicleToSyncCCDTO findByPlate(String plate);
 }
 

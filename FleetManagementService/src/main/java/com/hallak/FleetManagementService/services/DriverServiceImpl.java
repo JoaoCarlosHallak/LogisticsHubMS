@@ -90,17 +90,20 @@ public class DriverServiceImpl implements DriverService {
     }
 
     @Override
-    public Void changeSituation(Long driverId, String situation) {
-        Driver driver = driverRepository.findById(driverId).orElseThrow(() -> new EntityExistsException("This driver doesn't exists"));
+    public Void changeSituation(String cpf, String situation) {
+        Driver driver = driverRepository.findByCpf(cpf).orElseThrow(() -> new EntityExistsException("This driver doesn't exists"));
         driver.setSituation(Situation.valueOf(situation.toUpperCase()));
         driverRepository.save(driver);
         return null;
     }
 
-
-
-
-
+    @Override
+    public DriverToSyncCCDTO findByCpf(String cpf) {
+        return modelMapper.map(driverRepository.findByCpf(cpf)
+                        .orElseThrow(() -> new EntityExistsException("Driver not found")),
+                DriverToSyncCCDTO.class
+        );
+    }
 
 
 }

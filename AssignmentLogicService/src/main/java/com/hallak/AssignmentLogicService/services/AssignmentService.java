@@ -1,9 +1,9 @@
 package com.hallak.AssignmentLogicService.services;
 
-import com.hallak.shared_libraries.dtos.DeliveryToASyncDTO;
+import com.hallak.shared_libraries.dtos.DeliveryToCommunicationDTO;
 import com.hallak.shared_libraries.dtos.OrderDTO;
 
 
 public interface AssignmentService {
-    DeliveryToASyncDTO assignmentOrderAndVehicleAndDriver(OrderDTO orderDTO);
+    DeliveryToCommunicationDTO assignmentOrderAndVehicleAndDriver(OrderDTO orderDTO);
 }

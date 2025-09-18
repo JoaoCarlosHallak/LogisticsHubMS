@@ -35,6 +35,11 @@ public class VehicleController {
         return new ResponseEntity<>(vehicleService.findById(id), HttpStatus.OK);
     }
 
+    @GetMapping(value = "{plate}")
+    public ResponseEntity<VehicleToSyncCCDTO> findByPlate(@PathVariable String plate){
+        return new ResponseEntity<>(vehicleService.findByPlate(plate), HttpStatus.OK);
+    }
+
     @GetMapping
     public ResponseEntity<List<VehicleDTO>> findAll(){
         return new ResponseEntity<>(vehicleService.findAll(), HttpStatus.OK);
@@ -61,16 +66,16 @@ public class VehicleController {
     }
 
 
-    @PatchMapping(value = "{id}/maintenance")
-    public ResponseEntity<Void> changeMaintenance(@PathVariable Long vehicleId, @RequestParam String maintenance){
-        return new ResponseEntity<>(vehicleService.changeMaintenance(vehicleId, maintenance), HttpStatus.OK);
+    @PutMapping(value = "{plate}/maintenance")
+    public ResponseEntity<Void> changeMaintenance(@PathVariable String plate, @RequestParam String maintenance){
+        return new ResponseEntity<>(vehicleService.changeMaintenance(plate, maintenance), HttpStatus.OK);
     }
 
 
 
-    @PatchMapping(value = "{id}/available-to-running")
-    public ResponseEntity<Void> changeAvailability(@PathVariable Long vehicleId, @RequestParam String availability){
-        return new ResponseEntity<>(vehicleService.changeAvailability(vehicleId, availability), HttpStatus.OK);
+    @PutMapping(value = "{plate}/availability")
+    public ResponseEntity<Void> changeAvailability(@PathVariable String plate, @RequestParam String availability){
+        return new ResponseEntity<>(vehicleService.changeAvailability(plate, availability), HttpStatus.OK);
     }
 
 

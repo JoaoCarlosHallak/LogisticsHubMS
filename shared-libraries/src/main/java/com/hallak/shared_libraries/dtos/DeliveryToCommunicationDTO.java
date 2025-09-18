@@ -8,13 +8,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeliveryToASyncDTO {
+public class DeliveryToCommunicationDTO {
 
     private String name;
     private VehicleToSyncCCDTO vehicle;
-    private OrderDTO orderDTO;
-    private DriverToSyncCCDTO driverDTO;
-    private TripDTO tripDTO;
+    private OrderDTO order;
+    private DriverToSyncCCDTO driver;
+    private TripDTO trip;
 
 
 

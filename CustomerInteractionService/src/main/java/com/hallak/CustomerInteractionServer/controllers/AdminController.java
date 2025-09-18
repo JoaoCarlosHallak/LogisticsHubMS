@@ -2,10 +2,14 @@ package com.hallak.CustomerInteractionServer.controllers;
 
 
 import com.hallak.CustomerInteractionServer.services.OrderService;
-import com.hallak.shared_libraries.dtos.DeliveryToASyncDTO;
+import com.hallak.shared_libraries.dtos.DeliveryToCommunicationDTO;
+import com.hallak.shared_libraries.dtos.OrderDTO;
+import jakarta.ws.rs.Path;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.graphql.GraphQlProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,11 +25,14 @@ public class AdminController {
 
 
     @PostMapping(value = "dispatch/{id}")
-    public ResponseEntity<DeliveryToASyncDTO> dispatchOrderById(@PathVariable Long id){
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public ResponseEntity<DeliveryToCommunicationDTO> dispatchOrderById(@PathVariable Long id){
         return new ResponseEntity<>(orderService.dispatchOrderById(id), HttpStatus.OK);
+    }
 
-
-
+    @GetMapping(value = "order/{id}")
+    public ResponseEntity<OrderDTO> findOrderById(@PathVariable Long id){
+        return new ResponseEntity<>(orderService.findOrderById(id), HttpStatus.OK);
     }
 
 

@@ -32,6 +32,12 @@ public class DriverController {
         return new ResponseEntity<>(driverService.findById(id), HttpStatus.OK);
     }
 
+    @GetMapping(value = "{cpf}")
+    public ResponseEntity<DriverToSyncCCDTO> findByCpf(@PathVariable String cpf) {
+        return new ResponseEntity<>(driverService.findByCpf(cpf), HttpStatus.OK);
+    }
+
+
     @GetMapping
     public ResponseEntity<List<DriverDTO>> findAll() {
         return new ResponseEntity<>(driverService.findAll(), HttpStatus.OK);
@@ -55,9 +61,9 @@ public class DriverController {
     }
 
 
-    @PatchMapping(value = "{id}/situation")
-    public ResponseEntity<Void> changeSituation(@PathVariable Long driverId, @RequestParam String situation){
-        return new ResponseEntity<>(driverService.changeSituation(driverId, situation), HttpStatus.OK);
+    @PutMapping(value = "{cpf}/situation")
+    public ResponseEntity<Void> changeSituation(@PathVariable String cpf, @RequestParam String situation){
+        return new ResponseEntity<>(driverService.changeSituation(cpf, situation), HttpStatus.OK);
     }
 
 
