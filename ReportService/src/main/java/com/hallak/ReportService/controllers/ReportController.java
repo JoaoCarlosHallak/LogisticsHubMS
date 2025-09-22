@@ -21,7 +21,7 @@ public class ReportController {
 
 
     @PostMapping
-    public ResponseEntity<DeliveryDTO> makeReportAndReturnDelivery(@RequestBody DeliveryDTO deliveryDTO){
+    public ResponseEntity<byte[]> makeReportAndReturnDelivery(@RequestBody DeliveryDTO deliveryDTO){
         return new ResponseEntity<>(reportService.makeReportAndReturnDelivery(deliveryDTO), HttpStatus.CREATED);
     }
 

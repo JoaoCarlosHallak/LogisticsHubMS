@@ -32,7 +32,7 @@ public class DriverController {
         return new ResponseEntity<>(driverService.findById(id), HttpStatus.OK);
     }
 
-    @GetMapping(value = "{cpf}")
+    @GetMapping(value = "findByCpf/{cpf}")
     public ResponseEntity<DriverToSyncCCDTO> findByCpf(@PathVariable String cpf) {
         return new ResponseEntity<>(driverService.findByCpf(cpf), HttpStatus.OK);
     }

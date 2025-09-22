@@ -99,6 +99,8 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public DriverToSyncCCDTO findByCpf(String cpf) {
+        System.out.println(cpf);
+        System.out.println(cpf == driverRepository.findById(1L).get().getCpf());
         return modelMapper.map(driverRepository.findByCpf(cpf)
                         .orElseThrow(() -> new EntityExistsException("Driver not found")),
                 DriverToSyncCCDTO.class

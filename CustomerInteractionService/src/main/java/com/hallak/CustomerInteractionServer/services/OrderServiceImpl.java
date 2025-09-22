@@ -97,7 +97,7 @@ public class OrderServiceImpl implements OrderService {
         Object response = rabbitTemplate.convertSendAndReceive(queueToDispatchOrder.getName(), modelMapper.map(order, OrderDTO.class));
         log.info("Received {}", response);
         if (response instanceof DeliveryToCommunicationDTO delivery) {
-            delivery.getOrderDTO().setUserResponseDTO(modelMapper.map(orderRepository.findUserByOrderId(delivery.getOrderDTO().getId()), UserResponseDTO.class));
+            delivery.getOrder().setUserResponseDTO(modelMapper.map(orderRepository.findUserByOrderId(delivery.getOrder().getId()), UserResponseDTO.class));
             return delivery;
             }
         return new DeliveryToCommunicationDTO();

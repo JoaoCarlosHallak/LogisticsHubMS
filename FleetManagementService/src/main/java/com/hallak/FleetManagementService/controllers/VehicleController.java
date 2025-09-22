@@ -35,7 +35,7 @@ public class VehicleController {
         return new ResponseEntity<>(vehicleService.findById(id), HttpStatus.OK);
     }
 
-    @GetMapping(value = "{plate}")
+    @GetMapping(value = "findByPlate/{plate}")
     public ResponseEntity<VehicleToSyncCCDTO> findByPlate(@PathVariable String plate){
         return new ResponseEntity<>(vehicleService.findByPlate(plate), HttpStatus.OK);
     }
