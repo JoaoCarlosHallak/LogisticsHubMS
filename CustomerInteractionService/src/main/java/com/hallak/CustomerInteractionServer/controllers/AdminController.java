@@ -35,6 +35,11 @@ public class AdminController {
         return new ResponseEntity<>(orderService.findOrderById(id), HttpStatus.OK);
     }
 
+    @PutMapping(value = "order/{id}/state")
+    public ResponseEntity<Void> changeState(@PathVariable Long id, @RequestParam String state){
+        return new ResponseEntity<>(orderService.changeState(id, state), HttpStatus.OK);
+    }
+
 
 
 

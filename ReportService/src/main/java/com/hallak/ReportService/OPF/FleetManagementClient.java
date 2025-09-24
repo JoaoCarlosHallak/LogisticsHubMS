@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "fleetManagement-service")
 public interface FleetManagementClient {
 
-    @GetMapping("findByCpf/{cpf}")
+    @GetMapping("/driver/findByCpf/{cpf}")
     DriverToSyncCCDTO findByCpf(@PathVariable String cpf);
 
-    @GetMapping("findByPlate/{plate}")
+    @GetMapping("/vehicle/findByPlate/{plate}")
     VehicleToSyncCCDTO findByPlate(@PathVariable String plate);
 
 

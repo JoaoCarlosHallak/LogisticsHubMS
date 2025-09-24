@@ -110,6 +110,14 @@ public class OrderServiceImpl implements OrderService {
                 orderRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("Order with this id doesn't exists"))
                 , OrderDTO.class);
     }
+
+    @Override
+    public Void changeState(Long id, String state) {
+        Order order = orderRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("Order with this id doesn't exists"));
+        order.setState(State.valueOf(state));
+        orderRepository.save(order);
+        return null;
+    }
 }
 
 

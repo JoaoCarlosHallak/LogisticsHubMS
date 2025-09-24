@@ -13,4 +13,5 @@ public interface OrderService {
     OrderResponseDTO findMyOrder(String name);
     DeliveryToCommunicationDTO dispatchOrderById(Long id);
     OrderDTO findOrderById(Long id);
+    Void changeState(Long id, String state);
 }

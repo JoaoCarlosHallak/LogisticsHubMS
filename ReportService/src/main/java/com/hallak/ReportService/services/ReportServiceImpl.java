@@ -3,13 +3,13 @@ package com.hallak.ReportService.services;
 import com.hallak.ReportService.OPF.CustomerInteractionClient;
 import com.hallak.ReportService.OPF.FleetManagementClient;
 import com.hallak.shared_libraries.dtos.*;
-import org.openpdf.text.Document;
-import org.openpdf.text.Paragraph;
+import org.openpdf.text.*;
+import org.openpdf.text.pdf.PdfPTable;
+import org.openpdf.text.pdf.PdfWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 @Service
@@ -27,37 +27,123 @@ public class ReportServiceImpl implements ReportService {
 
     @Override
     public byte[] makeReportAndReturnDelivery(DeliveryDTO deliveryDTO) {
-
-
         DriverToSyncCCDTO driver = fleetManagementClient.findByCpf(deliveryDTO.getDriverCpf());
         VehicleToSyncCCDTO vehicle = fleetManagementClient.findByPlate(deliveryDTO.getVehiclePlate());
         OrderDTO order = customerInteractionClient.findOrderById(deliveryDTO.getOrderId());
-
+        customerInteractionClient.changeState(deliveryDTO.getOrderId(), State.DELIVERED.name());
 
         DeliveryToCommunicationDTO delivery = new DeliveryToCommunicationDTO(
                 "Delivery: " + driver.getName() + " | " + vehicle.getModel() + " | " + order.getName(),
                 vehicle,
                 order,
                 driver,
-                deliveryDTO.getTrip());
-
-
+                deliveryDTO.getTrip()
+        );
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        Document document = new Document();
-        document.add(new Paragraph("Delivery Report"));
-        document.add(new Paragraph(" "));
-        document.add(new Paragraph("Name: " + delivery.getName()));
-        document.add(new Paragraph("ID: " + deliveryDTO.getId()));
-        document.add(new Paragraph("Order: " + delivery.getOrder()));
-        document.add(new Paragraph("Trip: " + delivery.getTrip()));
-        document.add(new Paragraph("Vehicle: " + delivery.getVehicle()));
-        document.close();
 
-        return baos.toByteArray();
+        try (Document document = new Document(PageSize.A4, 40, 40, 40, 40)) {
+            PdfWriter.getInstance(document, baos);
+            document.open();
 
 
+            Font titleFont = new Font(Font.HELVETICA, 18, Font.BOLD);
+            Font sectionFont = new Font(Font.HELVETICA, 14, Font.BOLD);
+            Font normalFont = new Font(Font.HELVETICA, 12);
 
+
+            Paragraph title = new Paragraph("Delivery Report", titleFont);
+            title.setAlignment(Element.ALIGN_CENTER);
+            document.add(title);
+            document.add(Chunk.NEWLINE);
+
+
+            document.add(new Paragraph("Delivery Data", sectionFont));
+            PdfPTable deliveryTable = new PdfPTable(2);
+            deliveryTable.setWidthPercentage(100);
+            deliveryTable.setSpacingBefore(5f);
+            deliveryTable.setSpacingAfter(15f);
+            deliveryTable.addCell("Name");
+            deliveryTable.addCell(delivery.getName());
+            deliveryTable.addCell("ID");
+            deliveryTable.addCell(String.valueOf(deliveryDTO.getId()));
+            document.add(deliveryTable);
+
+
+            document.add(new Paragraph("Order", sectionFont));
+            PdfPTable orderTable = new PdfPTable(2);
+            orderTable.setWidthPercentage(100);
+            orderTable.setSpacingBefore(5f);
+            orderTable.setSpacingAfter(15f);
+            orderTable.addCell("Name");
+            orderTable.addCell(order.getName());
+            orderTable.addCell("Specification");
+            orderTable.addCell(order.getSpecification().toString());
+            orderTable.addCell("Weight");
+            orderTable.addCell(String.valueOf(order.getWeight()) + " kg");
+            orderTable.addCell("Origin");
+            orderTable.addCell(order.getRoute().getOrigin().getName());
+            orderTable.addCell("Destination");
+            orderTable.addCell(order.getRoute().getDestiny().getName());
+            orderTable.addCell("Status");
+            orderTable.addCell(order.getState().toString());
+            document.add(orderTable);
+
+
+            document.add(new Paragraph("Vehicle", sectionFont));
+            PdfPTable vehicleTable = new PdfPTable(2);
+            vehicleTable.setWidthPercentage(100);
+            vehicleTable.setSpacingBefore(5f);
+            vehicleTable.setSpacingAfter(15f);
+            vehicleTable.addCell("Model");
+            vehicleTable.addCell(vehicle.getModel());
+            vehicleTable.addCell("Plate");
+            vehicleTable.addCell(vehicle.getPlate());
+            vehicleTable.addCell("Capacity");
+            vehicleTable.addCell(vehicle.getCapacity() + " kg");
+            document.add(vehicleTable);
+
+            document.add(new Paragraph("Driver", sectionFont));
+            PdfPTable driverTable = new PdfPTable(2);
+            driverTable.setWidthPercentage(100);
+            driverTable.setSpacingBefore(5f);
+            driverTable.setSpacingAfter(15f);
+            driverTable.addCell("Name");
+            driverTable.addCell(driver.getName());
+            driverTable.addCell("CPF");
+            driverTable.addCell(driver.getCpf());
+            driverTable.addCell("Birth Date");
+            driverTable.addCell(driver.getBirth_date().toString());
+            document.add(driverTable);
+
+            document.add(new Paragraph("Trip", sectionFont));
+            PdfPTable tripTable = new PdfPTable(2);
+            tripTable.setWidthPercentage(100);
+            tripTable.setSpacingBefore(5f);
+            tripTable.setSpacingAfter(15f);
+            tripTable.addCell("Departure Date");
+            tripTable.addCell(delivery.getTrip().getDepartureDate().toString());
+            tripTable.addCell("Arrival Date");
+            tripTable.addCell(delivery.getTrip().getArrivalDate().toString());
+            tripTable.addCell("Total Duration");
+
+            LocalDateTime departureDate = delivery.getTrip().getDepartureDate();
+            LocalDateTime arrivalDate = delivery.getTrip().getArrivalDate();
+
+
+            tripTable.addCell(
+                    "In Days: " + Duration.between(departureDate, arrivalDate).toDays() +
+                            " | In Hours: " + Duration.between(departureDate, arrivalDate).toHours() +
+                            " | In Minutes: " + Duration.between(departureDate, arrivalDate).toMinutes() +
+                            " | In Seconds: " + Duration.between(departureDate, arrivalDate).toSeconds()
+            );
+            document.add(tripTable);
+
+        } catch (Exception e) {
+            throw new RuntimeException("Fail in generation of PDF", e);
+        }
+
+    return baos.toByteArray();
     }
 }
 
