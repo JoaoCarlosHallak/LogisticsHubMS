@@ -49,7 +49,7 @@ public class ReportServiceImpl implements ReportService {
 
             Font titleFont = new Font(Font.HELVETICA, 18, Font.BOLD);
             Font sectionFont = new Font(Font.HELVETICA, 14, Font.BOLD);
-            Font normalFont = new Font(Font.HELVETICA, 12);
+            //Font normalFont = new Font(Font.HELVETICA, 12);
 
 
             Paragraph title = new Paragraph("Delivery Report", titleFont);

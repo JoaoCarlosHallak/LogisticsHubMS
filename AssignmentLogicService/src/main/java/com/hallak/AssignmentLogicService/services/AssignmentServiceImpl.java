@@ -52,8 +52,6 @@ public class AssignmentServiceImpl implements AssignmentService {
                     ((distanceMatrixService.getTravelTimeInHours(originCep, destinyCep) > 15) ? Maintenance.LOW : Maintenance.MEDIUM).toString(),
                     specification.toString(),
                     weight);
-            drivers.forEach(System.out::println);
-            vehicles.forEach(System.out::println);
 
             if (drivers.isEmpty() && vehicles.isEmpty()) {
                 throw new ResourceAccessException("No drivers and vehicles available for assignment");
