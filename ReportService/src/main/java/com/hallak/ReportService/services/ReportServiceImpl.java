@@ -30,7 +30,9 @@ public class ReportServiceImpl implements ReportService {
         DriverToSyncCCDTO driver = fleetManagementClient.findByCpf(deliveryDTO.getDriverCpf());
         VehicleToSyncCCDTO vehicle = fleetManagementClient.findByPlate(deliveryDTO.getVehiclePlate());
         OrderDTO order = customerInteractionClient.findOrderById(deliveryDTO.getOrderId());
+        UserResponseDTO userResponseDTO = customerInteractionClient.getClientByUsername(deliveryDTO.getClientUsername());
         customerInteractionClient.changeState(deliveryDTO.getOrderId(), State.DELIVERED.name());
+
 
         DeliveryToCommunicationDTO delivery = new DeliveryToCommunicationDTO(
                 "Delivery: " + driver.getName() + " | " + vehicle.getModel() + " | " + order.getName(),
@@ -49,7 +51,6 @@ public class ReportServiceImpl implements ReportService {
 
             Font titleFont = new Font(Font.HELVETICA, 18, Font.BOLD);
             Font sectionFont = new Font(Font.HELVETICA, 14, Font.BOLD);
-            //Font normalFont = new Font(Font.HELVETICA, 12);
 
 
             Paragraph title = new Paragraph("Delivery Report", titleFont);
@@ -138,6 +139,21 @@ public class ReportServiceImpl implements ReportService {
                             " | In Seconds: " + Duration.between(departureDate, arrivalDate).toSeconds()
             );
             document.add(tripTable);
+
+            document.add(new Paragraph("Client", sectionFont));
+            PdfPTable clientTable = new PdfPTable(2);
+            clientTable.setWidthPercentage(100);
+            clientTable.setSpacingBefore(5f);
+            clientTable.setSpacingAfter(15f);
+            clientTable.addCell("CPF");
+            clientTable.addCell(userResponseDTO.getCpf());
+            clientTable.addCell("Username");
+            clientTable.addCell(userResponseDTO.getUsername());
+            clientTable.addCell("Email");
+            clientTable.addCell(userResponseDTO.getEmail());
+            document.add(clientTable);
+
+
 
         } catch (Exception e) {
             throw new RuntimeException("Fail in generation of PDF", e);

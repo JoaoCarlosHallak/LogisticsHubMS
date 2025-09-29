@@ -1,6 +1,7 @@
 package com.hallak.ReportService.OPF;
 
 import com.hallak.shared_libraries.dtos.OrderDTO;
+import com.hallak.shared_libraries.dtos.UserResponseDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,5 +15,8 @@ public interface CustomerInteractionClient {
     OrderDTO findOrderById(@PathVariable Long id);
 
     @PutMapping(value = "/admin/order/{id}/state")
-    OrderDTO changeState(@PathVariable Long id, @RequestParam String state);
+    void changeState(@PathVariable Long id, @RequestParam String state);
+
+    @GetMapping(value = "admin/client/{username}")
+    UserResponseDTO getClientByUsername(@PathVariable String username);
 }

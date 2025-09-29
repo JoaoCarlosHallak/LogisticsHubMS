@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81eba086-a16e-436b-87a1-b235835b6f2c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/controllers/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerInteractionService/src/main/java/com/hallak/CustomerInteractionServer/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/entities/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/entities/Delivery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/services/DeliveryRepositoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/services/DeliveryRepositoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReportService/src/main/java/com/hallak/ReportService/OPF/CustomerInteractionClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ReportService/src/main/java/com/hallak/ReportService/OPF/CustomerInteractionClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReportService/src/main/java/com/hallak/ReportService/services/ReportServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ReportService/src/main/java/com/hallak/ReportService/services/ReportServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/DeliveryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared-libraries/src/main/java/com/hallak/shared_libraries/dtos/DeliveryDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,9 +187,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ReportServiceApplication" />
-        <item itemvalue="Application.CustomerInteractionServerApplication" />
-        <item itemvalue="Application.FleetManagementServiceApplication" />
         <item itemvalue="Application.DeliveryRepositoryServiceApplication" />
+        <item itemvalue="Application.FleetManagementServiceApplication" />
+        <item itemvalue="Application.CustomerInteractionServerApplication" />
         <item itemvalue="Application.AssignmentLogicServiceApplication" />
       </list>
     </recent_temporary>

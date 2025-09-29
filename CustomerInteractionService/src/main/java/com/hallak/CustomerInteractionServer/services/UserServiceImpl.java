@@ -4,6 +4,7 @@ import com.hallak.CustomerInteractionServer.dtos.UserRequestDTO;
 import com.hallak.CustomerInteractionServer.entities.RoleType;
 import com.hallak.CustomerInteractionServer.entities.User;
 import com.hallak.CustomerInteractionServer.repositories.UserRepository;
+import com.hallak.shared_libraries.dtos.UserResponseDTO;
 import jakarta.persistence.EntityExistsException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,6 +63,11 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         } catch (Exception e) {
             throw new AuthenticationServiceException(e.getMessage());
         }
+    }
+
+    @Override
+    public UserResponseDTO getClientByUsername(String username) {
+        return modelMapper.map(userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("Username not found")), UserResponseDTO.class);
     }
 }
 

@@ -44,8 +44,8 @@ public class DeliveryRepositoryServiceImpl implements DeliveryRepositoryService{
                 deliveryDTO.getVehicle().getPlate(),
                 deliveryDTO.getOrder().getId(),
                 deliveryDTO.getDriver().getCpf(),
-                modelMapper.map(deliveryDTO.getTrip(),
-                        Trip.class));
+                deliveryDTO.getOrder().getUserResponseDTO().getUsername(),
+                modelMapper.map(deliveryDTO.getTrip(), Trip.class));
         deliveryRepository.save(delivery);
         return deliveryDTO;
 

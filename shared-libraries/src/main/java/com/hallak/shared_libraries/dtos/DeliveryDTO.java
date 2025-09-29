@@ -14,6 +14,7 @@ public class DeliveryDTO {
     private String vehiclePlate;
     private Long orderId;
     private String driverCpf;
+    private String clientUsername;
     private TripDTO trip;
 
 

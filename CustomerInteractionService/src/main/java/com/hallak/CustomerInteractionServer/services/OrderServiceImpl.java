@@ -94,7 +94,9 @@ public class OrderServiceImpl implements OrderService {
         Order order = orderRepository.findById(id).
                 orElseThrow(() -> new UsernameNotFoundException("Order with this id doesn't exists"));
         log.info("Sending order > name: {} / specification: {} / state: {}", order.getName(), order.getSpecification(), order.getState());
-        Object response = rabbitTemplate.convertSendAndReceive(queueToDispatchOrder.getName(), modelMapper.map(order, OrderDTO.class));
+        OrderDTO orderToAsync = modelMapper.map(order, OrderDTO.class);
+        orderToAsync.setUserResponseDTO(modelMapper.map(order.getUser(), UserResponseDTO.class));
+        Object response = rabbitTemplate.convertSendAndReceive(queueToDispatchOrder.getName(), orderToAsync);
         log.info("Received {}", response);
         if (response instanceof DeliveryToCommunicationDTO delivery) {
             delivery.getOrder().setUserResponseDTO(modelMapper.map(orderRepository.findUserByOrderId(delivery.getOrder().getId()), UserResponseDTO.class));
