@@ -69,6 +69,6 @@ O **DeliveryToCommunicationDTO** é persistido no banco como **Delivery**, entid
 
 ✅ Por fim, retorna o **PDF** com todas as informações consolidadas.  
 
-![img.png](img.png)
+![img_3.png](img_3.png)
 
 ---
