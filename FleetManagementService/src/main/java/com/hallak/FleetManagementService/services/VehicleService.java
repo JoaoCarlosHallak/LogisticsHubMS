@@ -15,5 +15,6 @@ public interface VehicleService {
     Void changeMaintenance(String plate, String maintenance);
     Void changeAvailability(String plate, String availability);
     VehicleToSyncCCDTO findByPlate(String plate);
+    String sendToMechanic(Long id);
 }
 

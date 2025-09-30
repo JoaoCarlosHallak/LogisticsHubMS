@@ -106,5 +106,17 @@ public class VehicleServiceImpl implements VehicleService{
         return modelMapper.map(vehicleRepository.findByPlate(plate), VehicleToSyncCCDTO.class);
     }
 
+    @Override
+    public String sendToMechanic(Long id) {
+        Vehicle vehicle = vehicleRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("This vehicle doesn't exists"));
+        if (vehicle.getMaintenance().equals(Maintenance.LOW)){
+            return "This vehicle does not need mechanical service";
+        }
+        vehicle.setMaintenance(Maintenance.LOW);
+        vehicleRepository.save(vehicle);
+        return "Vehicle " + vehicle.getModel() + " (plate: " + vehicle.getPlate() + ") has returned from the mechanic.";
+
+    }
+
 
 }

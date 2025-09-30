@@ -74,6 +74,11 @@ public class VehicleController {
         return new ResponseEntity<>(vehicleService.changeAvailability(plate, availability), HttpStatus.OK);
     }
 
+    @PatchMapping(value = "sendToMechanic/{id}")
+    public ResponseEntity<String> sendToMechanic(@PathVariable Long id){
+        return new ResponseEntity<>(vehicleService.sendToMechanic(id), HttpStatus.OK);
+    }
+
 
 
 

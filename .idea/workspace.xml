@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81eba086-a16e-436b-87a1-b235835b6f2c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/SyncConfig/OPF/FleetManagementClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/services/AssignmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AssignmentLogicService/src/main/java/com/hallak/AssignmentLogicService/services/AssignmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/services/DeliveryRepositoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeliveryRepositoryService/src/main/java/com/hallak/DeliveryRepositoryService/services/DeliveryRepositoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/controllers/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/controllers/VehicleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/services/VehicleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/services/VehicleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/services/VehicleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FleetManagementService/src/main/java/com/hallak/FleetManagementService/services/VehicleServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +106,7 @@
       <recent name="C:\Users\User\Downloads\FleetManagementService\LogisticsHubMS" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hallak.DeliveryRepositoryService.SyncConfig.OPF" />
       <recent name="com.hallak.DeliveryRepositoryService.Config" />
       <recent name="com.hallak.shared_libraries.entities" />
       <recent name="com.hallak.shared_libraries" />
