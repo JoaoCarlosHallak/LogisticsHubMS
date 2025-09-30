@@ -1,8 +1,8 @@
 package com.hallak.CustomerInteractionServer.entities;
 
 
-import com.hallak.shared_libraries.dtos.Specification;
-import com.hallak.shared_libraries.dtos.State;
+import com.hallak.shared_libraries.enums.Specification;
+import com.hallak.shared_libraries.enums.State;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;

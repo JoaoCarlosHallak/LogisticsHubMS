@@ -3,6 +3,8 @@ package com.hallak.ReportService.services;
 import com.hallak.ReportService.OPF.CustomerInteractionClient;
 import com.hallak.ReportService.OPF.FleetManagementClient;
 import com.hallak.shared_libraries.dtos.*;
+import com.hallak.shared_libraries.enums.State;
+import com.hallak.shared_libraries.exceptions.PdfGenerationException;
 import org.openpdf.text.*;
 import org.openpdf.text.pdf.PdfPTable;
 import org.openpdf.text.pdf.PdfWriter;
@@ -156,7 +158,7 @@ public class ReportServiceImpl implements ReportService {
 
 
         } catch (Exception e) {
-            throw new RuntimeException("Fail in generation of PDF", e);
+            throw new PdfGenerationException("Fail in generation of PDF", e);
         }
 
     return baos.toByteArray();

@@ -1,9 +1,9 @@
 package com.hallak.AssignmentLogicService;
 
-import com.hallak.shared_libraries.dtos.config.Async.SharedMQConsumerConfig;
-import com.hallak.shared_libraries.dtos.config.Async.SharedMQCommonConfig;
-import com.hallak.shared_libraries.dtos.config.Async.SharedMQProducerConfig;
-import com.hallak.shared_libraries.dtos.config.utils.ConfigUtils;
+import com.hallak.shared_libraries.config.Async.SharedMQConsumerConfig;
+import com.hallak.shared_libraries.config.Async.SharedMQCommonConfig;
+import com.hallak.shared_libraries.config.Async.SharedMQProducerConfig;
+import com.hallak.shared_libraries.config.utils.ConfigUtils;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

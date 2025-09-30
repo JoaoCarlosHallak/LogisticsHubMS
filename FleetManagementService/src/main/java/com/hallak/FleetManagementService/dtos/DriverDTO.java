@@ -1,8 +1,8 @@
 package com.hallak.FleetManagementService.dtos;
 
 
-import com.hallak.shared_libraries.dtos.Situation;
-import com.hallak.shared_libraries.dtos.Specification;
+import com.hallak.shared_libraries.enums.Situation;
+import com.hallak.shared_libraries.enums.Specification;
 import lombok.Data;
 
 import java.time.LocalDate;

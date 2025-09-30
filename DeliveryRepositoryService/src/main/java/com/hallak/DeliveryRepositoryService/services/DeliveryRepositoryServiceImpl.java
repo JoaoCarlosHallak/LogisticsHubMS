@@ -6,6 +6,7 @@ import com.hallak.DeliveryRepositoryService.entities.Trip;
 import com.hallak.DeliveryRepositoryService.repositories.DeliveryRepository;
 import com.hallak.shared_libraries.dtos.DeliveryDTO;
 import com.hallak.shared_libraries.dtos.DeliveryToCommunicationDTO;
+import com.hallak.shared_libraries.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityExistsException;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
@@ -58,7 +59,7 @@ public class DeliveryRepositoryServiceImpl implements DeliveryRepositoryService{
 
     @Override
     public byte[] deliveryOrder(Long deliveryId) {
-        Delivery delivery = deliveryRepository.findById(deliveryId).orElseThrow(() -> new EntityExistsException("There isn't delivery with this id"));
+        Delivery delivery = deliveryRepository.findById(deliveryId).orElseThrow(() -> new ResourceNotFoundException("There isn't delivery with this id"));
         delivery.getTrip().setArrivalDate(LocalDateTime.now());
         return reportClient.makeReportAndReturnDeliveryPDF(modelMapper.map(delivery, DeliveryDTO.class));
 

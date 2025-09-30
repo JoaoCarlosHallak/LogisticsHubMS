@@ -1,4 +1,4 @@
-package com.hallak.shared_libraries.dtos.config.Async;
+package com.hallak.shared_libraries.config.Async;
 
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

@@ -3,11 +3,11 @@ package com.hallak.FleetManagementService.services;
 import com.hallak.FleetManagementService.dtos.VehicleDTO;
 import com.hallak.FleetManagementService.entities.Vehicle;
 import com.hallak.FleetManagementService.repositories.VehicleRepository;
-import com.hallak.shared_libraries.dtos.Availability;
-import com.hallak.shared_libraries.dtos.Maintenance;
-import com.hallak.shared_libraries.dtos.Specification;
+import com.hallak.shared_libraries.enums.Availability;
+import com.hallak.shared_libraries.enums.Maintenance;
+import com.hallak.shared_libraries.enums.Specification;
 import com.hallak.shared_libraries.dtos.VehicleToSyncCCDTO;
-import jakarta.persistence.EntityExistsException;
+import com.hallak.shared_libraries.exceptions.ResourceNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,7 +39,7 @@ public class VehicleServiceImpl implements VehicleService{
 
     @Override
     public VehicleDTO findById(Long id) {
-        return modelMapper.map(vehicleRepository.findById(id), VehicleDTO.class);
+        return modelMapper.map(vehicleRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Vehicle not founded")), VehicleDTO.class);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class VehicleServiceImpl implements VehicleService{
     @Override
     @Transactional
     public String deleteById(Long id) {
-        Vehicle vehicle = vehicleRepository.findById(id).orElseThrow(() -> new EntityExistsException("Vehicle not founded"));
+        Vehicle vehicle = vehicleRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Vehicle not founded"));
         vehicleRepository.delete(vehicle);
         return "Vehicle of model: " + vehicle.getModel() + " and plate: " + vehicle.getPlate() + " deleted with success";
 
@@ -63,7 +63,7 @@ public class VehicleServiceImpl implements VehicleService{
         Optional<Vehicle> vehicle = vehicleRepository.findById(vehicleDTO.getId());
 
         if (vehicle.isEmpty()){
-            throw new EntityExistsException();
+            throw new ResourceNotFoundException("Vehicle not founded");
         }
 
         return modelMapper.map(vehicleRepository.save(modelMapper.map(vehicleDTO, Vehicle.class)), VehicleDTO.class);
@@ -85,7 +85,7 @@ public class VehicleServiceImpl implements VehicleService{
     @Override
     public Void changeMaintenance(String plate, String maintenance) {
         Vehicle vehicle = vehicleRepository.findByPlate(plate)
-                .orElseThrow(() -> new EntityExistsException("This vehicle doesn't exist"));
+                .orElseThrow(() -> new ResourceNotFoundException("This vehicle doesn't exists"));
         vehicle.setMaintenance(Maintenance.valueOf(maintenance.toUpperCase()));
         vehicleRepository.save(vehicle);
         return null;
@@ -95,7 +95,7 @@ public class VehicleServiceImpl implements VehicleService{
     @Override
     public Void changeAvailability(String plate, String availability) {
         Vehicle vehicle = vehicleRepository.findByPlate(plate)
-                .orElseThrow(() -> new EntityExistsException("This vehicle doesn't exist"));
+                .orElseThrow(() -> new ResourceNotFoundException("This vehicle doesn't exists"));
         vehicle.setAvailability(Availability.valueOf(availability.toUpperCase()));
         vehicleRepository.save(vehicle);
         return null;

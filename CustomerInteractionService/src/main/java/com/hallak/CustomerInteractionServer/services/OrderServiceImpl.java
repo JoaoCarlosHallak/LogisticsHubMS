@@ -4,10 +4,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hallak.CustomerInteractionServer.dtos.OrderListResponseDTO;
 import com.hallak.CustomerInteractionServer.dtos.OrderResponseDTO;
 import com.hallak.CustomerInteractionServer.repositories.UserRepository;
-import com.hallak.shared_libraries.dtos.*;
+import com.hallak.shared_libraries.enums.State;
 import com.hallak.CustomerInteractionServer.entities.Order;
 import com.hallak.CustomerInteractionServer.entities.User;
 import com.hallak.CustomerInteractionServer.repositories.OrderRepository;
+import com.hallak.shared_libraries.dtos.DeliveryToCommunicationDTO;
+import com.hallak.shared_libraries.dtos.OrderDTO;
+import com.hallak.shared_libraries.dtos.UserResponseDTO;
+import com.hallak.shared_libraries.exceptions.ResourceNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,12 +29,10 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
-    private final UserRepository userRepository;
     private final UserService userService;
     private final ModelMapper modelMapper;
     private final Queue queueToDispatchOrder;
     private final RabbitTemplate rabbitTemplate;
-    private final ObjectMapper objectMapper;
     private static final Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
 
     @Autowired
@@ -40,11 +42,9 @@ public class OrderServiceImpl implements OrderService {
                             OrderRepository orderRepository, UserRepository userRepository,
                             UserService userService,
                             ModelMapper modelMapper) {
-        this.objectMapper = objectMapper;
         this.queueToDispatchOrder = queueToDispatchOrder;
         this.rabbitTemplate = rabbitTemplate;
         this.orderRepository = orderRepository;
-        this.userRepository = userRepository;
         this.userService = userService;
         this.modelMapper = modelMapper;
     }
@@ -84,7 +84,7 @@ public class OrderServiceImpl implements OrderService {
     public OrderResponseDTO findMyOrder(String name) {
         return modelMapper.map
                 (orderRepository.findByName(name)
-                                .orElseThrow(() -> new UsernameNotFoundException("Order with this name doesn't exists"))
+                                .orElseThrow(() -> new ResourceNotFoundException("Order with this name doesn't exists"))
                         , OrderResponseDTO.class);
 
     }
@@ -92,7 +92,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public DeliveryToCommunicationDTO dispatchOrderById(Long id) {
         Order order = orderRepository.findById(id).
-                orElseThrow(() -> new UsernameNotFoundException("Order with this id doesn't exists"));
+                orElseThrow(() -> new ResourceNotFoundException("Order with this id doesn't exists"));
         log.info("Sending order > name: {} / specification: {} / state: {}", order.getName(), order.getSpecification(), order.getState());
         OrderDTO orderToAsync = modelMapper.map(order, OrderDTO.class);
         orderToAsync.setUserResponseDTO(modelMapper.map(order.getUser(), UserResponseDTO.class));
@@ -109,13 +109,13 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public OrderDTO findOrderById(Long id) {
         return modelMapper.map(
-                orderRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("Order with this id doesn't exists"))
+                orderRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Order with this id doesn't exists"))
                 , OrderDTO.class);
     }
 
     @Override
     public Void changeState(Long id, String state) {
-        Order order = orderRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("Order with this id doesn't exists"));
+        Order order = orderRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Order with this id doesn't exists"));
         order.setState(State.valueOf(state));
         orderRepository.save(order);
         return null;

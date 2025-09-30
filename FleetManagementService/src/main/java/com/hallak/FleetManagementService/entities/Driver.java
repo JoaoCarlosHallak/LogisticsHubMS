@@ -1,7 +1,7 @@
 package com.hallak.FleetManagementService.entities;
 
-import com.hallak.shared_libraries.dtos.Situation;
-import com.hallak.shared_libraries.dtos.Specification;
+import com.hallak.shared_libraries.enums.Situation;
+import com.hallak.shared_libraries.enums.Specification;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;

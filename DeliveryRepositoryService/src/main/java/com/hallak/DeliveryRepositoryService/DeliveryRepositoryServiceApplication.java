@@ -1,9 +1,9 @@
 package com.hallak.DeliveryRepositoryService;
 
-import com.hallak.shared_libraries.dtos.config.Async.SharedMQCommonConfig;
-import com.hallak.shared_libraries.dtos.config.Async.SharedMQConsumerConfig;
-import com.hallak.shared_libraries.dtos.config.Async.SharedMQProducerConfig;
-import com.hallak.shared_libraries.dtos.config.utils.ConfigUtils;
+import com.hallak.shared_libraries.config.Async.SharedMQCommonConfig;
+import com.hallak.shared_libraries.config.Async.SharedMQConsumerConfig;
+import com.hallak.shared_libraries.config.utils.ConfigUtils;
+import com.hallak.shared_libraries.handlers.GlobalRestControllerAdvice;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Import;
 @EnableDiscoveryClient
 @EnableRabbit
 @EnableFeignClients
-@Import({ConfigUtils.class, SharedMQConsumerConfig.class, SharedMQCommonConfig.class})
+@Import({ConfigUtils.class, SharedMQConsumerConfig.class, SharedMQCommonConfig.class, GlobalRestControllerAdvice.class})
 public class DeliveryRepositoryServiceApplication {
 
 	public static void main(String[] args) {

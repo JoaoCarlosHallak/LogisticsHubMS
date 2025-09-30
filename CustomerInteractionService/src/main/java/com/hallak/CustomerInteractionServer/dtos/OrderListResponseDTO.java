@@ -1,6 +1,6 @@
 package com.hallak.CustomerInteractionServer.dtos;
 
-import com.hallak.shared_libraries.dtos.State;
+import com.hallak.shared_libraries.enums.State;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

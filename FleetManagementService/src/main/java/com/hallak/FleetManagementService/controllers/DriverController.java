@@ -5,7 +5,6 @@ package com.hallak.FleetManagementService.controllers;
 import com.hallak.FleetManagementService.dtos.DriverDTO;
 import com.hallak.FleetManagementService.services.DriverService;
 import com.hallak.shared_libraries.dtos.DriverToSyncCCDTO;
-import com.hallak.shared_libraries.dtos.Situation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,9 +1,7 @@
 package com.hallak.FleetManagementService.services;
 
 import com.hallak.FleetManagementService.dtos.DriverDTO;
-import com.hallak.FleetManagementService.dtos.VehicleDTO;
 import com.hallak.shared_libraries.dtos.DriverToSyncCCDTO;
-import com.hallak.shared_libraries.dtos.Situation;
 
 import java.util.List;
 

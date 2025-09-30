@@ -1,9 +1,9 @@
 package com.hallak.FleetManagementService.repositories;
 
 import com.hallak.FleetManagementService.entities.Vehicle;
-import com.hallak.shared_libraries.dtos.Availability;
-import com.hallak.shared_libraries.dtos.Maintenance;
-import com.hallak.shared_libraries.dtos.Specification;
+import com.hallak.shared_libraries.enums.Availability;
+import com.hallak.shared_libraries.enums.Maintenance;
+import com.hallak.shared_libraries.enums.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -2,11 +2,7 @@ package com.hallak.FleetManagementService.controllers;
 
 import com.hallak.FleetManagementService.dtos.VehicleDTO;
 import com.hallak.FleetManagementService.services.VehicleService;
-import com.hallak.shared_libraries.dtos.Availability;
-import com.hallak.shared_libraries.dtos.Maintenance;
 import com.hallak.shared_libraries.dtos.VehicleToSyncCCDTO;
-import jakarta.persistence.EnumType;
-import org.apache.commons.lang.enums.Enum;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

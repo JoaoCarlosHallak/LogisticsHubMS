@@ -1,8 +1,8 @@
 package com.hallak.FleetManagementService.entities;
 
-import com.hallak.shared_libraries.dtos.Availability;
-import com.hallak.shared_libraries.dtos.Maintenance;
-import com.hallak.shared_libraries.dtos.Specification;
+import com.hallak.shared_libraries.enums.Availability;
+import com.hallak.shared_libraries.enums.Maintenance;
+import com.hallak.shared_libraries.enums.Specification;
 import jakarta.persistence.*;
 import lombok.Data;
 

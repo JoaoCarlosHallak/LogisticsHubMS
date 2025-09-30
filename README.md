@@ -2,6 +2,63 @@ README temporário ⚠️
 
 # 🚚 Projeto de Logística com Spring Boot
 
+Você tem toda razão! Peço desculpas pela omissão.
+
+A API do Google Distance Matrix é uma peça central na lógica de negócios do AssignmentLogicService, conforme detalhado no seu README inicial. Embora ela não apareça diretamente como uma dependência Maven (porque é consumida via WebClient ou RestTemplate no código Java), ela é uma tecnologia externa crucial para o projeto.
+
+Incluí a API na lista. Aqui está a seção atualizada para você usar no GitHub:
+
+🛠️ Tecnologias e Dependências
+
+Linguagem e Framework
+
+    Java 24
+
+    Spring Boot 3.5.5
+
+APIs e Integrações Externas
+
+    Google Distance Matrix API: Utilizada pelo AssignmentLogicService para calcular o tempo médio de trajeto entre origem e destino, essencial para a lógica de atribuição de manutenção veicular.
+
+Arquitetura de Microsserviços
+
+    Spring Cloud Netflix Eureka Client: Serviço de Descoberta para que os microsserviços se encontrem na rede.
+
+    Spring Cloud Config: Gerenciamento centralizado das configurações de todos os serviços.
+
+    Spring Cloud OpenFeign: Para comunicação síncrona entre microsserviços.
+
+Persistência e Banco de Dados
+
+    Spring Boot Starter Data JPA
+
+    PostgreSQL
+
+    Jakarta Persistence API
+
+Mensageria e Comunicação Assíncrona
+
+    Spring Boot Starter AMQP: Habilita a comunicação assíncrona usando (AMQP) com RabbitMQ.
+
+Segurança
+
+    Spring Boot Starter Security: Segurança para autenticação e autorização.
+
+    Spring Security OAuth2 Authorization Server: Implementação do servidor de autorização.
+
+    Spring Security OAuth2 Resource Server: Configuração para proteger os Recursos usando tokens OAuth2.
+
+Utilidades e Desenvolvimento
+
+    Lombok: Biblioteca para reduzir o boilerplate code.
+
+    ModelMapper: Biblioteca para mapeamento de objetos.
+
+    Jackson Datatype JSR310: Suporte a data/hora do Java 8.
+
+    Spring Boot DevTools: Utilitários para desenvolvimento rápido.
+
+    Shared Libraries (com.hallak:shared-libraries): Módulo interno para compartilhar DTOs e configurações comuns.
 ## 1. Criação da Frota
 Nesta etapa, criamos os **veículos** e **motoristas**, simulando a frota de uma empresa.  
 

@@ -2,6 +2,10 @@ package com.hallak.AssignmentLogicService.services;
 
 import com.hallak.AssignmentLogicService.SyncConfig.OPF.FleetManagementClient;
 import com.hallak.shared_libraries.dtos.*;
+import com.hallak.shared_libraries.enums.Availability;
+import com.hallak.shared_libraries.enums.Maintenance;
+import com.hallak.shared_libraries.enums.Situation;
+import com.hallak.shared_libraries.enums.Specification;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Queue;

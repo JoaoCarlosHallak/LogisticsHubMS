@@ -1,6 +1,5 @@
 package com.hallak.DeliveryRepositoryService.controllers;
 
-import com.hallak.DeliveryRepositoryService.entities.Delivery;
 import com.hallak.DeliveryRepositoryService.services.DeliveryRepositoryService;
 import com.hallak.shared_libraries.dtos.DeliveryDTO;
 import org.springframework.beans.factory.annotation.Autowired;

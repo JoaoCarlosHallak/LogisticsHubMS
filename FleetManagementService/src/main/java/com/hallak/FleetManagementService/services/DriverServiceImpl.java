@@ -2,19 +2,19 @@ package com.hallak.FleetManagementService.services;
 
 import com.hallak.FleetManagementService.dtos.DriverDTO;
 import com.hallak.FleetManagementService.entities.Driver;
-import com.hallak.FleetManagementService.entities.Vehicle;
 import com.hallak.FleetManagementService.repositories.DriverRepository;
 
 import com.hallak.shared_libraries.dtos.DriverToSyncCCDTO;
-import com.hallak.shared_libraries.dtos.Situation;
-import com.hallak.shared_libraries.dtos.Specification;
-import jakarta.persistence.EntityExistsException;
+import com.hallak.shared_libraries.enums.Situation;
+import com.hallak.shared_libraries.enums.Specification;
+import com.hallak.shared_libraries.exceptions.ResourceNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 
@@ -43,7 +43,7 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public DriverDTO findById(Long id) {
         return modelMapper.map(driverRepository.findById(id)
-                        .orElseThrow(() -> new EntityExistsException("Driver not found")),
+                        .orElseThrow(() -> new ResourceNotFoundException("Driver not found")),
                 DriverDTO.class
         );
     }
@@ -59,7 +59,7 @@ public class DriverServiceImpl implements DriverService {
     @Transactional
     public String deleteById(Long id) {
         Driver driver = driverRepository.findById(id)
-                .orElseThrow(() -> new EntityExistsException("Driver not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Driver not found"));
         driverRepository.delete(driver);
         return "Driver with name: " + driver.getName() + " deleted successfully";
     }
@@ -70,7 +70,7 @@ public class DriverServiceImpl implements DriverService {
         Optional<Driver> driver = driverRepository.findById(driverDTO.getId());
 
         if (driver.isEmpty()) {
-            throw new EntityExistsException("Driver not found");
+            throw new ResourceNotFoundException("Driver not found");
         }
 
         return modelMapper.map(
@@ -91,7 +91,7 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public Void changeSituation(String cpf, String situation) {
-        Driver driver = driverRepository.findByCpf(cpf).orElseThrow(() -> new EntityExistsException("This driver doesn't exists"));
+        Driver driver = driverRepository.findByCpf(cpf).orElseThrow(() -> new ResourceNotFoundException("This driver doesn't exists"));
         driver.setSituation(Situation.valueOf(situation.toUpperCase()));
         driverRepository.save(driver);
         return null;
@@ -100,9 +100,9 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public DriverToSyncCCDTO findByCpf(String cpf) {
         System.out.println(cpf);
-        System.out.println(cpf == driverRepository.findById(1L).get().getCpf());
+        System.out.println(Objects.equals(cpf, driverRepository.findById(1L).get().getCpf()));
         return modelMapper.map(driverRepository.findByCpf(cpf)
-                        .orElseThrow(() -> new EntityExistsException("Driver not found")),
+                        .orElseThrow(() -> new ResourceNotFoundException("Driver not found")),
                 DriverToSyncCCDTO.class
         );
     }

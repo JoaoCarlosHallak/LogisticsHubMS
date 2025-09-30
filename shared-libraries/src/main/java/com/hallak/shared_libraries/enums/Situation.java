@@ -1,4 +1,4 @@
-package com.hallak.shared_libraries.dtos;
+package com.hallak.shared_libraries.enums;
 
 public enum Situation {
     ON_ROUTE("On Route", "Driver is currently transporting cargo"),

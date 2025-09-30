@@ -1,5 +1,8 @@
 package com.hallak.shared_libraries.dtos;
 
+import com.hallak.shared_libraries.enums.Availability;
+import com.hallak.shared_libraries.enums.Maintenance;
+import com.hallak.shared_libraries.enums.Specification;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
