@@ -48,14 +48,12 @@ public class AssignmentServiceImpl implements AssignmentService {
         Double weight = orderDTO.getWeight();
         String originCep = orderDTO.getRoute().getOrigin().getCep();
         String destinyCep = orderDTO.getRoute().getDestiny().getCep();
+        int travelTimeInHours = distanceMatrixService.getTravelTimeInHours(originCep, destinyCep);
 
 
         try {
             List<DriverToSyncCCDTO> drivers = fleetManagementClient.findByParamsDrive(specification.toString(), Situation.AVAILABLE.toString());
-            List<VehicleToSyncCCDTO> vehicles = fleetManagementClient.findByParamsVehicle(Availability.AVAILABLE.toString(),
-                    ((distanceMatrixService.getTravelTimeInHours(originCep, destinyCep) > 15) ? Maintenance.LOW : Maintenance.MEDIUM).toString(),
-                    specification.toString(),
-                    weight);
+            List<VehicleToSyncCCDTO> vehicles = fleetManagementClient.findByParamsVehicle(Availability.AVAILABLE.toString(), ((travelTimeInHours > 15) ? Maintenance.LOW : Maintenance.MEDIUM).toString(), specification.toString(), weight);
 
             if (drivers.isEmpty() && vehicles.isEmpty()) {
                 throw new ResourceAccessException("No drivers and vehicles available for assignment");
@@ -86,6 +84,13 @@ public class AssignmentServiceImpl implements AssignmentService {
             rabbitTemplate.convertSendAndReceive(queueToSaveDelivery.getName(), deliveryToCommunicationDTO);
 
             log.info("Received {}", deliveryToCommunicationDTO);
+
+            if (travelTimeInHours > 15) {
+                fleetManagementClient.changeMaintenance(vehicle.getPlate(), Maintenance.MEDIUM.toString());
+            } else {
+                fleetManagementClient.changeMaintenance(vehicle.getPlate(), Maintenance.HIGH.toString());
+            }
+
 
             return deliveryToCommunicationDTO;
 

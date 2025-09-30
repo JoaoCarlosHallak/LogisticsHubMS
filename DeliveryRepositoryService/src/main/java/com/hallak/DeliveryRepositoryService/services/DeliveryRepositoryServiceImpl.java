@@ -1,11 +1,15 @@
 package com.hallak.DeliveryRepositoryService.services;
 
+import com.hallak.DeliveryRepositoryService.SyncConfig.OPF.FleetManagementClient;
 import com.hallak.DeliveryRepositoryService.SyncConfig.OPF.ReportClient;
 import com.hallak.DeliveryRepositoryService.entities.Delivery;
 import com.hallak.DeliveryRepositoryService.entities.Trip;
 import com.hallak.DeliveryRepositoryService.repositories.DeliveryRepository;
 import com.hallak.shared_libraries.dtos.DeliveryDTO;
 import com.hallak.shared_libraries.dtos.DeliveryToCommunicationDTO;
+import com.hallak.shared_libraries.enums.Availability;
+import com.hallak.shared_libraries.enums.Situation;
+import com.hallak.shared_libraries.exceptions.PdfGenerationException;
 import com.hallak.shared_libraries.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityExistsException;
 import org.modelmapper.ModelMapper;
@@ -25,13 +29,15 @@ public class DeliveryRepositoryServiceImpl implements DeliveryRepositoryService{
     private final ModelMapper modelMapper;
     private static final Logger log = LoggerFactory.getLogger(DeliveryRepositoryServiceImpl.class);
     private final ReportClient reportClient;
+    private final FleetManagementClient fleetManagementClient;
 
 
 
-    public DeliveryRepositoryServiceImpl(DeliveryRepository deliveryRepository, ModelMapper modelMapper, ReportClient reportClient) {
+    public DeliveryRepositoryServiceImpl(DeliveryRepository deliveryRepository, ModelMapper modelMapper, ReportClient reportClient, FleetManagementClient fleetManagementClient) {
         this.deliveryRepository = deliveryRepository;
         this.modelMapper = modelMapper;
         this.reportClient = reportClient;
+        this.fleetManagementClient = fleetManagementClient;
     }
 
 
@@ -59,9 +65,17 @@ public class DeliveryRepositoryServiceImpl implements DeliveryRepositoryService{
 
     @Override
     public byte[] deliveryOrder(Long deliveryId) {
-        Delivery delivery = deliveryRepository.findById(deliveryId).orElseThrow(() -> new ResourceNotFoundException("There isn't delivery with this id"));
-        delivery.getTrip().setArrivalDate(LocalDateTime.now());
-        return reportClient.makeReportAndReturnDeliveryPDF(modelMapper.map(delivery, DeliveryDTO.class));
+        try {
+            Delivery delivery = deliveryRepository.findById(deliveryId).orElseThrow(() -> new ResourceNotFoundException("There isn't delivery with this id"));
+            delivery.getTrip().setArrivalDate(LocalDateTime.now());
+            byte[] pdf =  reportClient.makeReportAndReturnDeliveryPDF(modelMapper.map(delivery, DeliveryDTO.class));
+            fleetManagementClient.changeSituation(delivery.getDriverCpf(), Situation.AVAILABLE.toString());
+            fleetManagementClient.changeAvailability(delivery.getVehiclePlate(), Availability.AVAILABLE.toString());
+            return pdf;
+        } catch (Exception e){
+            throw new PdfGenerationException("Failed in the generation of PDF", e);
+        }
+
 
     }
 
