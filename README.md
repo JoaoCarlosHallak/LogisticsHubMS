@@ -1,12 +1,5 @@
-README temporário ⚠️
 
 # 🚚 Projeto de Logística com Spring Boot
-
-Você tem toda razão! Peço desculpas pela omissão.
-
-A API do Google Distance Matrix é uma peça central na lógica de negócios do AssignmentLogicService, conforme detalhado no seu README inicial. Embora ela não apareça diretamente como uma dependência Maven (porque é consumida via WebClient ou RestTemplate no código Java), ela é uma tecnologia externa crucial para o projeto.
-
-Incluí a API na lista. Aqui está a seção atualizada para você usar no GitHub:
 
 🛠️ Tecnologias e Dependências
 
